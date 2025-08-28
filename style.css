@@ -29,13 +29,13 @@ header{
     right: 15px;
     padding: 8px 12px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
-    color: #333; /* Cor do texto mais suave */
-    font-size: 12px; /* Texto menor */
-    font-family: Arial, sans-serif; /* Fonte mais limpa */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra mais leve */
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: #333; 
+    font-size: 12px; 
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
     z-index: 1000;
-    transition: opacity 0.3s ease; /* Transição suave para hover */
+    transition: opacity 0.3s ease;
 }
 
 .dica:hover {
