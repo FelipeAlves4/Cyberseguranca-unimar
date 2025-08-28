@@ -84,7 +84,7 @@ input.addEventListener("keydown", async function (event) {
         }
         //Senha errada
         else {
-            await typeText("\n>>> Intrusão detectada. Tente novamente.");
+            await typeText("\n>>> Instrução detectada. Tente novamente.");
         }
 
         input.value = "";
