@@ -12,6 +12,10 @@ input.addEventListener("keydown", function (event) {
             output.innerText += "\n>>> Senha vazada.\n>>> Senha: CYBER2025";
         }
         
+        else if (valor === "clear") {
+            output.innerText = "";
+        }
+
         //Senha correta será acesso concedido
         else if (valor === senhaCorreta) {
             output.innerText += "\n\n>>> Acesso concedido.\n>>> Invadindo o banco de dados...\n";
