@@ -8,6 +8,11 @@ body {
     height: 100vh;
     margin: 0;
 }
+header{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
 
 .terminal {
     width: 900px;
@@ -18,9 +23,23 @@ body {
     box-shadow: 0 0 20px #04d9ff;
 }
 
-.dica{
-    display: flex;
-    border-radius: 20px;
+.dica {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    color: #333; /* Cor do texto mais suave */
+    font-size: 12px; /* Texto menor */
+    font-family: Arial, sans-serif; /* Fonte mais limpa */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra mais leve */
+    z-index: 1000;
+    transition: opacity 0.3s ease; /* Transição suave para hover */
+}
+
+.dica:hover {
+    opacity: 0.8; /* Torna o balão mais discreto ao passar o mouse */
 }
 
 .output {

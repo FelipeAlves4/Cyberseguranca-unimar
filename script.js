@@ -8,7 +8,7 @@ input.addEventListener("keydown", function (event) {
         const valor = input.value.trim();
 
         //Comando "sudo" Irá revela a senha
-        if (valor === "sudo apt get senha") {
+        if (valor === "sudo apt senha") {
             output.innerText += "\n>>> Senha vazada.\n>>> Senha: CYBER2025";
         }
         
