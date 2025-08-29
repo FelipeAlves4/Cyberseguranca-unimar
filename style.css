@@ -21,12 +21,12 @@ header {
     justify-content: flex-end; /* Garante que o input fique no final */
     width: 900px;
     height: 500px;
-    overflow-y: auto;
     background: #000;
     padding: 20px;
     border: 2px solid #04d9ff;
     border-radius: 10px;
     box-shadow: 0 0 20px #04d9ff;
+    overflow: hidden; /* Remove a rolagem */
 }
 
 .dica {
@@ -66,6 +66,8 @@ input {
     border-radius: 5px;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none; /* Remove as setinhas */
+    -webkit-appearance: none; /* Remove as setinhas no WebKit */
 }
 
 .blink {
