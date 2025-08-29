@@ -8,14 +8,20 @@ body {
     height: 100vh;
     margin: 0;
 }
-header{
+
+header {
     display: flex;
     justify-content: right;
     align-items: right;
 }
 
 .terminal {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    justify-content: flex-end; /* Garante que o input fique no final */
     width: 900px;
+    height: 500px;
+    overflow-y: auto;
     background: #000;
     padding: 20px;
     border: 2px solid #04d9ff;
@@ -29,11 +35,11 @@ header{
     right: 15px;
     padding: 8px 12px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8); 
-    color: #333; 
-    font-size: 12px; 
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 12px;
     font-family: Arial, sans-serif;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     transition: opacity 0.3s ease;
 }
@@ -43,6 +49,7 @@ header{
 }
 
 .output {
+    flex-grow: 1; /* Permite que a área de saída ocupe o espaço disponível */
     min-height: 100px;
     white-space: pre-line;
     margin-bottom: 10px;
@@ -55,7 +62,10 @@ input {
     color: #04d9ff;
     font-family: monospace;
     font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
     outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blink {
