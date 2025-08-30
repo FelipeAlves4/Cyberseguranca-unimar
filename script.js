@@ -3,7 +3,7 @@ const output = document.getElementById("output");
 
 const senhaCorreta = "CYBER2025";
 
-// Função para simular digitação lenta
+//Função para simular digitação lenta
 function typeText(text, delay = 30) {
     return new Promise(resolve => {
         let i = 0;
@@ -17,15 +17,21 @@ function typeText(text, delay = 30) {
             if (i >= text.length) {
                 clearInterval(interval);
                 output.innerHTML += "<br>";
+                //Rolagem automática para o final
+                output.scrollTop = output.scrollHeight;
                 resolve();
+            } else {
+                //Rolar automaticamente enquanto digita
+                output.scrollTop = output.scrollHeight;
             }
         }, delay);
     });
 }
 
-// Mensagem de boas-vindas ao carregar a página
+
 window.onload = async () => {
-    await typeText(">>> Bem-vindo ao Sistema da Unimar [CYBER SECURITY MODE]\n");
+    await typeText(">>> Bem-vindo ao Sistema da Unimar [CYBER SECURITY MODE]");
+    await typeText(">>> Insira para acessar o sistema sua senha:\n");
     await typeText(">>> Dica: Use os comandos disponíveis para interagir.\n");
 };
 
@@ -42,20 +48,8 @@ input.addEventListener("keydown", async function (event) {
             await typeText(">>> Invadindo o banco de dados...");
             await new Promise(r => setTimeout(r, 1000));
 
-            // ASCII art da UNIMAR
-            await typeText(`
- $$\\   $$\\           $$\\                                   
-$$ |  $$ |          \\__|                                  
-$$ |  $$ |$$$$$$$\\  $$\\ $$$$$$\\$$$$\\   $$$$$$\\   $$$$$$\\  
-$$ |  $$ |$$  __$$\\ $$ |$$  _$$  _$$\\  \\____$$\\ $$  __$$\\ 
-$$ |  $$ |$$ |  $$ |$$ |$$ / $$ / $$ | $$$$$$$ |$$ |  \\__|
-$$ |  $$ |$$ |  $$ |$$ |$$ | $$ | $$ |$$  __$$ |$$ |      
-\\$$$$$$  |$$ |  $$ |$$ |$$ | $$ | $$ |\\$$$$$$$ |$$ |      
- \\______/ \\__|  \\__|\\__|\\__| \\__| \\__| \\_______|\\__|      
-                                                          
-                                                          
-                                                          
-    `, 2); // delay rápido para o desenho sair fluído
+            // Mostrar o ASCII art da UNIMAR
+            document.getElementById("ascii-unimar").style.display = "block";
 
             await typeText("\n>>> Acesso privilegiado concedido.");
             await typeText(">>> Dados confidenciais carregados do sistema UNIMAR.");
