@@ -1,9 +1,11 @@
 const input = document.getElementById("input");
 const output = document.getElementById("output");
+const asciiUnimar = document.getElementById("ascii-unimar");
 
 const senhaCorreta = "CYBER2025";
+let verbose = false;
 
-//Função para simular digitação lenta
+// Função para simular digitação lenta
 function typeText(text, delay = 30) {
     return new Promise(resolve => {
         let i = 0;
@@ -17,19 +19,33 @@ function typeText(text, delay = 30) {
             if (i >= text.length) {
                 clearInterval(interval);
                 output.innerHTML += "<br>";
-                //Rolagem automática para o final
                 output.scrollTop = output.scrollHeight;
                 resolve();
             } else {
-                //Rolar automaticamente enquanto digita
                 output.scrollTop = output.scrollHeight;
             }
         }, delay);
     });
 }
 
+// Função para imprimir saída instantânea (sem animação)
+function printOutput(text) {
+    output.innerHTML += text + "<br>";
+    output.scrollTop = output.scrollHeight;
+}
+
+// Função para mostrar o ASCII art
+function printAscii() {
+    asciiUnimar.style.display = "block";
+}
+
+// Função para esconder o ASCII art
+function hideAscii() {
+    asciiUnimar.style.display = "none";
+}
 
 window.onload = async () => {
+    hideAscii();
     await typeText(">>> Bem-vindo ao Sistema da Unimar [CYBER SECURITY MODE]");
     await typeText(">>> Insira para acessar o sistema sua senha:\n");
     await typeText(">>> Dica: Use os comandos disponíveis para interagir.\n");
@@ -39,17 +55,49 @@ input.addEventListener("keydown", async function (event) {
     if (event.key === "Enter") {
         const valor = input.value.trim();
 
-        if (valor === "sudo apt senha") {
-            await typeText("\n>>> Senha vazada.\n>>> Senha: CYBER2025");
+        // Comandos extras
+        if (valor === "help") {
+            printOutput("Comandos disponíveis:");
+            printOutput(" clear, sudo apt senha, verbose on/off, unimar-info, ls, cat alunos.txt, ping unimar.br, help");
         } else if (valor === "clear") {
             output.innerHTML = "";
+            hideAscii();
+        } else if (valor === "sudo apt senha") {
+            printOutput(">>> Senha vazada.<br>>> Senha: CYBER2025");
+        } else if (valor === "verbose on") {
+            verbose = true;
+            printOutput(">>> Modo VERBOSE ativado. Saídas mais detalhadas.");
+        } else if (valor === "verbose off") {
+            verbose = false;
+            printOutput(">>> Modo VERBOSE desativado.");
+        } else if (valor === "unimar-info") {
+            printOutput(">>> Universidade de Marília - UNIMAR");
+            printOutput(">>> Localização: Marília/SP");
+            printOutput(">>> Fundação: 1988");
+            printOutput(">>> Ranking: Top 10 universidades do interior");
+            printOutput(">>> Cursos: Direito, Medicina, TI, Engenharias...");
+            if (verbose) {
+                printOutput(">>> Infraestrutura: Laboratórios de TI, IoT, IA, Cibersegurança.");
+                printOutput(">>> Parcerias internacionais e foco em inovação tecnológica.");
+            }
+        } else if (valor === "ls") {
+            printOutput("Diretórios disponíveis:");
+            printOutput(" cursos_TI/   alunos/   professores/   biblioteca/");
+        } else if (valor === "cat alunos.txt") {
+            printOutput("[1] João Silva - ADS");
+            printOutput("[2] Maria Santos - Ciência da Computação");
+            printOutput("[3] Felipe Rodrigues - Cybersegurança");
+        } else if (valor === "ping unimar.br") {
+            printOutput("Enviando pacotes para unimar.br [200.160.2.3]...");
+            printOutput("Resposta: tempo=45ms");
+            printOutput("Resposta: tempo=47ms");
+            printOutput("Resposta: tempo=46ms");
         } else if (valor === senhaCorreta) {
             await typeText("\n>>> Acesso concedido.");
             await typeText(">>> Invadindo o banco de dados...");
             await new Promise(r => setTimeout(r, 1000));
 
-            // Mostrar o ASCII art da UNIMAR
-            document.getElementById("ascii-unimar").style.display = "block";
+            printAscii();
 
             await typeText("\n>>> Acesso privilegiado concedido.");
             await typeText(">>> Dados confidenciais carregados do sistema UNIMAR.");

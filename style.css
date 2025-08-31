@@ -30,6 +30,7 @@ header {
 }
 #terminal {
   font-family: monospace;
+  overflow: hidden;
   white-space: pre; /* mantém os espaços e quebras de linha */
 }
 
