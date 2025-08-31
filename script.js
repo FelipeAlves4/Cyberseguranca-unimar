@@ -115,7 +115,8 @@ input.addEventListener("keydown", async function (event) {
             await typeText("[1] Curso: ADS | Duração: 3 anos");
             await typeText("[2] Curso: Ciências da Computação | Duração: 4 anos");
             await typeText("[3] Curso: Cybersegurança | Duração: 3 anos");
-            await typeText("\n>>> Deseja acessar mais detalhes de um curso? Digite o número [1-3]");
+            await typeText("[4] Curso: Inteligência Artificial | Duração: 4 anos");
+            await typeText("\n>>> Deseja acessar mais detalhes de um curso? Digite o número [1-4]");
         } else if (valor === "1") {
             await typeText("\n>>> Detalhes do curso ADS:");
             await typeText("- Foco: Desenvolvimento de sistemas e softwares");
