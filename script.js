@@ -71,18 +71,18 @@ function typeText(text, delay = 30) {
     });
 }
 
-// Função para imprimir saída instantânea (sem animação)
+//Função para imprimir saida instantanea 
 function printOutput(text) {
     output.innerHTML += text + "<br>";
     output.scrollTop = output.scrollHeight;
 }
 
-// Função para mostrar o ASCII art
+//Função para mostrar o ASCII art
 function printAscii() {
     asciiUnimar.style.display = "block";
 }
 
-// Função para esconder o ASCII art
+//Função para esconder o ASCII art
 function hideAscii() {
     asciiUnimar.style.display = "none";
 }
@@ -98,12 +98,15 @@ input.addEventListener("keydown", async function (event) {
     if (event.key === "Enter") {
         const valor = input.value.trim();
 
-        //Lista de comandos
         if (valor === "help") {
             printOutput("Comandos disponíveis:");
-            printOutput(" clear, sudo apt senha, verbose on/off, unimar-info, ls, cat alunos.txt, ping unimar.br, matrix, stopmatrix, help");
+            printOutput("clear, sudo apt senha, verbose on/off, unimar-info, ls, cat alunos.txt, ping unimar.br, matrix, stopmatrix, help");
+            printOutput("clear: limpa o terminal");
+            printOutput("sudo apt senha: hackear a senha e expor ela");
+            printOutput("clear, sudo apt senha, verbose on/off, unimar-info, ls, cat alunos.txt, ping unimar.br, matrix, stopmatrix, help");
+            printOutput("clear, sudo apt senha, verbose on/off, unimar-info, ls, cat alunos.txt, ping unimar.br, matrix, stopmatrix, help");
         } else if (valor === "matrix") {
-            await typeText("Iniciando Matrix...\n", 1);
+            await typeText("\nIniciando Matrix...\n", 1);
             startMatrix();
         } else if (valor === "stopmatrix") {
             await typeText("Encerrando Matrix...\n", 1);
@@ -115,10 +118,10 @@ input.addEventListener("keydown", async function (event) {
             printOutput(">>> Senha vazada.<br>>> Senha: CYBER2025");
         } else if (valor === "verbose on") {
             verbose = true;
-            printOutput(">>> Modo VERBOSE ativado. Saídas mais detalhadas.");
+            printOutput(">>> \n Modo VERBOSE ativado. Saídas mais detalhadas.");
         } else if (valor === "verbose off") {
             verbose = false;
-            printOutput(">>> Modo VERBOSE desativado.");
+            printOutput(">>> \n Modo VERBOSE desativado.");
         } else if (valor === "unimar-info") {
             printOutput(">>> Universidade de Marília - UNIMAR");
             printOutput(">>> Localização: Marília/SP");
@@ -160,7 +163,7 @@ input.addEventListener("keydown", async function (event) {
             await typeText("\n>>> SELECT * FROM cursos_TI WHERE ativo = 1;");
             await new Promise(r => setTimeout(r, 1000));
             await typeText(">>> Conexão estabelecida.");
-            await typeText(">>> 3 registros encontrados.\n");
+            await typeText(">>> 4 registros encontrados.\n");
             await typeText("[1] Curso: ADS | Duração: 3 anos");
             await typeText("[2] Curso: Ciências da Computação | Duração: 4 anos");
             await typeText("[3] Curso: Cybersegurança | Duração: 3 anos");
