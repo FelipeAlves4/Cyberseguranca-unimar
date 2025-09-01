@@ -5,6 +5,49 @@ const asciiUnimar = document.getElementById("ascii-unimar");
 const senhaCorreta = "CYBER2025";
 let verbose = false;
 
+// Matrix effect
+let matrixInterval;
+
+function startMatrix() {
+  const canvas = document.getElementById("matrix");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  canvas.style.display = "block";
+
+  const letters = "UNIMAR2025";
+  const fontSize = 16;
+  const columns = canvas.width / fontSize;
+
+  const drops = Array.from({ length: columns }).map(() => 1);
+
+  matrixInterval = setInterval(() => {
+    ctx.fillStyle = "rgba(0,0,0,0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#0F0";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters.charAt(Math.floor(Math.random() * letters.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }, 33);
+}
+
+function stopMatrix() {
+  const canvas = document.getElementById("matrix");
+  canvas.style.display = "none";
+  clearInterval(matrixInterval);
+}
+
+
 // Função para simular digitação lenta
 function typeText(text, delay = 30) {
     return new Promise(resolve => {
@@ -47,7 +90,7 @@ function hideAscii() {
 window.onload = async () => {
     hideAscii();
     await typeText(">>> Bem-vindo ao Sistema da Unimar [CYBER SECURITY MODE]");
-    await typeText(">>> Insira para acessar o sistema sua senha:\n");
+    await typeText(">>> Insira para acessar o sistema sua senha\n");
     await typeText(">>> Dica: Use os comandos disponíveis para interagir.\n");
 };
 
@@ -55,11 +98,17 @@ input.addEventListener("keydown", async function (event) {
     if (event.key === "Enter") {
         const valor = input.value.trim();
 
-        // Comandos extras
+        //Lista de comandos
         if (valor === "help") {
             printOutput("Comandos disponíveis:");
-            printOutput(" clear, sudo apt senha, verbose on/off, unimar-info, ls, cat alunos.txt, ping unimar.br, help");
-        } else if (valor === "clear") {
+            printOutput(" clear, sudo apt senha, verbose on/off, unimar-info, ls, cat alunos.txt, ping unimar.br, matrix, stopmatrix, help");
+        } else if (valor === "matrix") {
+            await typeText("Iniciando Matrix...\n", 1);
+            startMatrix();
+        } else if (valor === "stopmatrix") {
+            await typeText("Encerrando Matrix...\n", 1);
+            stopMatrix();
+        }  else if (valor === "clear") {
             output.innerHTML = "";
             hideAscii();
         } else if (valor === "sudo apt senha") {

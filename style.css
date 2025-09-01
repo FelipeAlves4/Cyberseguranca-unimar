@@ -27,11 +27,24 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 20px #04d9ff;
     overflow: hidden; /* Remove a rolagem */
+    position: relative;
+    z-index: 1; /* Fica acima do canvas */
 }
 #terminal {
   font-family: monospace;
   overflow: hidden;
   white-space: pre; /* mantém os espaços e quebras de linha */
+}
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: none; /* só mostra quando rodar matrix */
+  z-index: 0; /* Fica atrás do terminal */
+  pointer-events: none; /* Permite clicar e digitar no terminal */
 }
 
 
