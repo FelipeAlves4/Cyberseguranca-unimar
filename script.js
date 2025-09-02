@@ -5,46 +5,46 @@ const asciiUnimar = document.getElementById("ascii-unimar");
 const senhaCorreta = "CYBER2025";
 let verbose = false;
 
-// Matrix effect
+
 let matrixInterval;
 
 function startMatrix() {
-  const canvas = document.getElementById("matrix");
-  const ctx = canvas.getContext("2d");
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  canvas.style.display = "block";
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.display = "block";
 
-  const letters = "UNIMAR2025";
-  const fontSize = 16;
-  const columns = canvas.width / fontSize;
+    const letters = "UNIMAR2025";
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
 
-  const drops = Array.from({ length: columns }).map(() => 1);
+    const drops = Array.from({ length: columns }).map(() => 1);
 
-  matrixInterval = setInterval(() => {
-    ctx.fillStyle = "rgba(0,0,0,0.05)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    matrixInterval = setInterval(() => {
+        ctx.fillStyle = "rgba(0,0,0,0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "#0F0";
-    ctx.font = fontSize + "px monospace";
+        ctx.fillStyle = "#0F0";
+        ctx.font = fontSize + "px monospace";
 
-    for (let i = 0; i < drops.length; i++) {
-      const text = letters.charAt(Math.floor(Math.random() * letters.length));
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        for (let i = 0; i < drops.length; i++) {
+            const text = letters.charAt(Math.floor(Math.random() * letters.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
-    }
-  }, 33);
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    }, 33);
 }
 
 function stopMatrix() {
-  const canvas = document.getElementById("matrix");
-  canvas.style.display = "none";
-  clearInterval(matrixInterval);
+    const canvas = document.getElementById("matrix");
+    canvas.style.display = "none";
+    clearInterval(matrixInterval);
 }
 
 
@@ -99,19 +99,26 @@ input.addEventListener("keydown", async function (event) {
         const valor = input.value.trim();
 
         if (valor === "help") {
-            printOutput("Comandos disponíveis:");
-            printOutput("clear, sudo apt senha, verbose on/off, unimar-info, ls, cat alunos.txt, ping unimar.br, matrix, stopmatrix, help");
-            printOutput("clear: limpa o terminal");
-            printOutput("sudo apt senha: hackear a senha e expor ela");
-            printOutput("clear, sudo apt senha, verbose on/off, unimar-info, ls, cat alunos.txt, ping unimar.br, matrix, stopmatrix, help");
-            printOutput("clear, sudo apt senha, verbose on/off, unimar-info, ls, cat alunos.txt, ping unimar.br, matrix, stopmatrix, help");
+            printOutput(">>> Comandos disponíveis no sistema:");
+            printOutput("--------------------------------------------------");
+            printOutput("help                - Mostra todos os comandos");
+            printOutput("clear               - Limpa o terminal");
+            printOutput("sudo apt senha      - Descobre e exibe a senha");
+            printOutput("verbose on/off      - Ativa ou desativa detalhes extras");
+            printOutput("unimar-info         - Mostra informações da UNIMAR");
+            printOutput("ls                  - Lista diretórios disponíveis");
+            printOutput("cat alunos.txt      - Lista alunos cadastrados");
+            printOutput("ping unimar.br      - Simula ping para unimar.br");
+            printOutput("matrix              - Ativa efeito Matrix na tela");
+            printOutput("stopmatrix          - Para o efeito Matrix");
+            printOutput("--------------------------------------------------");
         } else if (valor === "matrix") {
             await typeText("\nIniciando Matrix...\n", 1);
             startMatrix();
         } else if (valor === "stopmatrix") {
             await typeText("Encerrando Matrix...\n", 1);
             stopMatrix();
-        }  else if (valor === "clear") {
+        } else if (valor === "clear") {
             output.innerHTML = "";
             hideAscii();
         } else if (valor === "sudo apt senha") {
