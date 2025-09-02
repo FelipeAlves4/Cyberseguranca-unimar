@@ -52,13 +52,12 @@ function typeText(text, delay = 30) {
         const interval = setInterval(() => {
             const formattedText = text[i]
                 .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/\n/g, "<br>");
+                .replace(/>/g, "&gt;");
             output.innerHTML += formattedText;
             i++;
             if (i >= text.length) {
                 clearInterval(interval);
-                output.innerHTML += "<br>";
+                output.innerHTML += "";
                 output.scrollTop = output.scrollHeight;
                 resolve();
             } else {
@@ -70,7 +69,7 @@ function typeText(text, delay = 30) {
 
 //Função para imprimir saida instantanea 
 function printOutput(text) {
-    output.innerHTML += text + "<br>";
+    output.innerHTML += text + "";
     output.scrollTop = output.scrollHeight;
 }
 
@@ -109,7 +108,6 @@ encrypt <texto>   -> Simula criptografia de um texto
 hack-unimar       -> Acesso fictício ao sistema
 
 🔹 Comandos especiais
-banner            -> Mostra o banner ASCII da UNIMAR
 matrix            -> Ativa o modo Matrix (efeito visual hacker)
 stopmatrix        -> Desativa o modo Matrix
 clear             -> Limpa a tela
@@ -193,7 +191,7 @@ Engenheiro de Cibersegurança: R$ 10.000+
             return "";
 
         case "sudo apt senha":
-            return ">>> Senha vazada.<br>>> Senha: CYBER2025";
+            return ">>> Senha vazada.>>> Senha: CYBER2025";
 
         case "verbose on":
             verbose = true;
@@ -215,52 +213,52 @@ Engenheiro de Cibersegurança: R$ 10.000+
                 info.push(">>> Infraestrutura: Laboratórios de TI, IoT, IA, Cibersegurança.");
                 info.push(">>> Parcerias internacionais e foco em inovação tecnológica.");
             }
-            return info.join("<br>");
+            return info.join("");
 
         case "ls":
-            return "Diretórios disponíveis:<br> cursos_TI/   alunos/   professores/   biblioteca/";
+            return "Diretórios disponíveis: cursos_TI/   alunos/   professores/   biblioteca/";
 
         case "cat alunos.txt":
-            return "[1] João Silva - ADS<br>[2] Maria Santos - Ciência da Computação<br>[3] Felipe Rodrigues - Cybersegurança";
+            return "[1] João Silva - ADS[2] Maria Santos - Ciência da Computação[3] Felipe Rodrigues - Cybersegurança";
 
         case "ping unimar.br":
-            return "\nEnviando pacotes para unimar.br [200.160.2.3]...<br>Resposta: tempo=45ms<br>Resposta: tempo=47ms<br>Resposta: tempo=46ms";
+            return "\nEnviando pacotes para unimar.br [200.160.2.3]...Resposta: tempo=45msResposta: tempo=47msResposta: tempo=46ms";
 
         // Senha correta
         case senhaCorreta.toLowerCase():
             printAscii();
             return `
->>> Acesso concedido.<br>
->>> Invadindo o banco de dados...<br>
->>> Acesso privilegiado concedido.<br>
->>> Dados confidenciais carregados do sistema UNIMAR.<br>
-------------------------------------------------------<br>
-- Fundada em: 1988<br>
-- Local: Marília/SP<br>
-- Cursos de destaque: TI, Direito, Medicina, Engenharias<br>
-- Parceiros: Cisco, AWS Academy, IBM SkillsBuild<br>
-------------------------------------------------------<br>
->>> SELECT * FROM cursos_TI WHERE ativo = 1;<br>
->>> Conexão estabelecida.<br>
->>> 4 registros encontrados.<br>
-[1] Curso: ADS | Duração: 3 anos<br>
-[2] Curso: Ciências da Computação | Duração: 4 anos<br>
-[3] Curso: Cybersegurança | Duração: 3 anos<br>
-[4] Curso: Inteligência Artificial | Duração: 4 anos<br>
+re>>> Acesso concedido.
+>>> Invadindo o banco de dados...
+>>> Acesso privilegiado concedido.
+>>> Dados confidenciais carregados do sistema UNIMAR.
+------------------------------------------------------
+- Fundada em: 1988
+- Local: Marília/SP
+- Cursos de destaque: TI, Direito, Medicina, Engenharias
+- Parceiros: Cisco, AWS Academy, IBM SkillsBuild
+------------------------------------------------------
+>>> SELECT * FROM cursos_TI WHERE ativo = 1;
+>>> Conexão estabelecida.
+>>> 4 registros encontrados.
+[1] Curso: ADS | Duração: 3 anos
+[2] Curso: Ciências da Computação | Duração: 4 anos
+[3] Curso: Cybersegurança | Duração: 3 anos
+[4] Curso: Inteligência Artificial | Duração: 4 anos
 >>> Deseja acessar mais detalhes de um curso? Digite o número [1-4]
 `;
 
         case "1":
-            return "\n>>> Detalhes do curso ADS:<br>- Foco: Desenvolvimento de sistemas e softwares<br>- Tecnologias: Python, Java, SQL, Web<br>- Mercado: Desenvolvedor full-stack, analista de sistemas";
+            return "\n>>> Detalhes do curso ADS:- Foco: Desenvolvimento de sistemas e softwares- Tecnologias: Python, Java, SQL, Web- Mercado: Desenvolvedor full-stack, analista de sistemas";
 
         case "2":
-            return "\n>>> Detalhes de Ciências da Computação:<br>- Foco: Projetar, arquitetar e manter softwares complexos<br>- Tecnologias: UML, DevOps, Java, C#, Python<br>- Mercado: Engenheiro de software, arquiteto de sistemas, analista de dados";
+            return "\n>>> Detalhes de Ciências da Computação:- Foco: Projetar, arquitetar e manter softwares complexos- Tecnologias: UML, DevOps, Java, C#, Python- Mercado: Engenheiro de software, arquiteto de sistemas, analista de dados";
 
         case "3":
-            return "\n>>> Detalhes de Cybersegurança:<br>- Foco: Proteção de redes, sistemas e dados<br>- Tecnologias: Pentest, criptografia, firewalls, SIEM<br>- Mercado: Analista SOC, consultor de segurança, ethical hacker";
+            return "\n>>> Detalhes de Cybersegurança:- Foco: Proteção de redes, sistemas e dados- Tecnologias: Pentest, criptografia, firewalls, SIEM- Mercado: Analista SOC, consultor de segurança, ethical hacker";
 
         case "4":
-            return "\n>>> Detalhes de Inteligência Artificial:<br>- Foco: Desenvolvimento de sistemas inteligentes<br>- Tecnologias: Machine Learning, Deep Learning, NLP, Python<br>- Mercado: Cientista de dados, engenheiro de ML, pesquisador em IA";
+            return "\n>>> Detalhes de Inteligência Artificial:- Foco: Desenvolvimento de sistemas inteligentes- Tecnologias: Machine Learning, Deep Learning, NLP, Python- Mercado: Cientista de dados, engenheiro de ML, pesquisador em IA";
 
         default:
             return `\n>>> Comando não reconhecido: ${cmd}. Digite 'help' para ver os disponíveis.`;
