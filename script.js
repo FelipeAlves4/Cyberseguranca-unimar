@@ -4,8 +4,6 @@ const asciiUnimar = document.getElementById("ascii-unimar");
 
 const senhaCorreta = "CYBER2025";
 let verbose = false;
-
-
 let matrixInterval;
 
 function startMatrix() {
@@ -47,7 +45,6 @@ function stopMatrix() {
     clearInterval(matrixInterval);
 }
 
-
 // Função para simular digitação lenta
 function typeText(text, delay = 30) {
     return new Promise(resolve => {
@@ -87,6 +84,173 @@ function hideAscii() {
     asciiUnimar.style.display = "none";
 }
 
+// Nova função para lidar com comandos
+function handleCommand(cmd) {
+    cmd = cmd.toLowerCase().trim();
+
+    switch (cmd) {
+        case "help":
+            return `Comandos disponíveis:
+whoami, scan unimar.br, encrypt <texto>, firewall --status, 
+traceroute unimar.br, dnslookup unimar.br, hack-unimar, 
+career-path, salary-info, banner, matrix, stopmatrix, about, apply`;
+
+        case "whoami":
+            return "Você é um aprendiz de Cibersegurança! Quer descobrir até onde pode chegar?";
+
+        case "scan unimar.br":
+            return `Scanning unimar.br...
+[22] SSH - Open
+[80] HTTP - Open
+[443] HTTPS - Open
+>> No curso você vai aprender a fazer testes de vulnerabilidade de forma ética.`;
+
+        case "encrypt minha_senha":
+            return `SHA256: 5f4dcc3b5aa765d61d8327deb882cf99
+>> Você aprenderá a proteger dados com criptografia.`;
+
+        case "firewall --status":
+            return `Firewall ativo: bloqueando 124 tentativas de invasão por segundo
+>> Quer aprender a configurar firewalls? Esse é só o começo.`;
+
+        case "traceroute unimar.br":
+            return `Rastreando rota para unimar.br...
+hop1 192.168.0.1
+hop2 100.23.45.67
+hop3 200.155.12.34
+>> No curso você vai estudar protocolos de rede e como monitorar tráfego.`;
+
+        case "dnslookup unimar.br":
+            return `unimar.br -> 200.155.12.34
+>> DNS é como a agenda da internet. No curso você aprende como ele pode ser manipulado em ataques.`;
+
+        case "hack-unimar":
+            return `ACCESS GRANTED
+ACCESS GRANTED
+ACCESS GRANTED
+>> Na vida real, hacking é sobre proteger, não destruir.
+>> No curso você vai aprender o lado ético da força.`;
+
+        case "career-path":
+            return `Estágios possíveis:
+[1] Analista de Segurança
+[2] Pentester
+[3] Especialista em Redes
+[4] Engenheiro de Cibersegurança
+>> Quer trilhar esse caminho? O curso é a porta de entrada.`;
+
+        case "salary-info":
+            return `Salários médios:
+Analista de Segurança: R$ 5.000 - 7.000
+Pentester: R$ 7.000 - 12.000
+Engenheiro de Cibersegurança: R$ 10.000+
+>> A demanda por profissionais cresce todos os anos.`;
+
+        case "banner":
+            return `
+███████╗██╗   ██╗███╗   ██╗██╗███╗   ███╗ █████╗ ██████╗ 
+██╔════╝██║   ██║████╗  ██║██║████╗ ████║██╔══██╗██╔══██╗
+███████╗██║   ██║██╔██╗ ██║██║██╔████╔██║███████║██████╔╝
+╚════██║██║   ██║██║╚██╗██║██║██║╚██╔╝██║██╔══██║██╔═══╝ 
+███████║╚██████╔╝██║ ╚████║██║██║ ╚═╝ ██║██║  ██║██║     
+╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     
+`;
+
+        case "matrix":
+            startMatrix();
+            return "Iniciando Matrix mode...";
+
+        case "stopmatrix":
+            stopMatrix();
+            return "Encerrando Matrix mode...";
+
+        case "about":
+            return `"Cibersegurança UNIMAR: Aprenda a defender, investigar e proteger o futuro digital."`;
+
+        case "apply":
+            return `🚀 Inscreva-se agora no curso de Cibersegurança da UNIMAR e comece sua jornada!`;
+
+        // Comandos originais do seu terminal
+        case "clear":
+            output.innerHTML = "";
+            hideAscii();
+            return "";
+
+        case "sudo apt senha":
+            return ">>> Senha vazada.<br>>> Senha: CYBER2025";
+
+        case "verbose on":
+            verbose = true;
+            return ">>> \n Modo VERBOSE ativado. Saídas mais detalhadas.";
+
+        case "verbose off":
+            verbose = false;
+            return ">>> \n Modo VERBOSE desativado.";
+
+        case "unimar-info":
+            let info = [
+                ">>> Universidade de Marília - UNIMAR",
+                ">>> Localização: Marília/SP",
+                ">>> Fundação: 1988",
+                ">>> Ranking: Top 10 universidades do interior",
+                ">>> Cursos: Direito, Medicina, TI, Engenharias..."
+            ];
+            if (verbose) {
+                info.push(">>> Infraestrutura: Laboratórios de TI, IoT, IA, Cibersegurança.");
+                info.push(">>> Parcerias internacionais e foco em inovação tecnológica.");
+            }
+            return info.join("<br>");
+
+        case "ls":
+            return "Diretórios disponíveis:<br> cursos_TI/   alunos/   professores/   biblioteca/";
+
+        case "cat alunos.txt":
+            return "[1] João Silva - ADS<br>[2] Maria Santos - Ciência da Computação<br>[3] Felipe Rodrigues - Cybersegurança";
+
+        case "ping unimar.br":
+            return "\nEnviando pacotes para unimar.br [200.160.2.3]...<br>Resposta: tempo=45ms<br>Resposta: tempo=47ms<br>Resposta: tempo=46ms";
+
+        // Senha correta
+        case senhaCorreta.toLowerCase():
+            printAscii();
+            return `
+>>> Acesso concedido.<br>
+>>> Invadindo o banco de dados...<br>
+>>> Acesso privilegiado concedido.<br>
+>>> Dados confidenciais carregados do sistema UNIMAR.<br>
+------------------------------------------------------<br>
+- Fundada em: 1988<br>
+- Local: Marília/SP<br>
+- Cursos de destaque: TI, Direito, Medicina, Engenharias<br>
+- Parceiros: Cisco, AWS Academy, IBM SkillsBuild<br>
+------------------------------------------------------<br>
+>>> SELECT * FROM cursos_TI WHERE ativo = 1;<br>
+>>> Conexão estabelecida.<br>
+>>> 4 registros encontrados.<br>
+[1] Curso: ADS | Duração: 3 anos<br>
+[2] Curso: Ciências da Computação | Duração: 4 anos<br>
+[3] Curso: Cybersegurança | Duração: 3 anos<br>
+[4] Curso: Inteligência Artificial | Duração: 4 anos<br>
+>>> Deseja acessar mais detalhes de um curso? Digite o número [1-4]
+`;
+
+        case "1":
+            return "\n>>> Detalhes do curso ADS:<br>- Foco: Desenvolvimento de sistemas e softwares<br>- Tecnologias: Python, Java, SQL, Web<br>- Mercado: Desenvolvedor full-stack, analista de sistemas";
+
+        case "2":
+            return "\n>>> Detalhes de Ciências da Computação:<br>- Foco: Projetar, arquitetar e manter softwares complexos<br>- Tecnologias: UML, DevOps, Java, C#, Python<br>- Mercado: Engenheiro de software, arquiteto de sistemas, analista de dados";
+
+        case "3":
+            return "\n>>> Detalhes de Cybersegurança:<br>- Foco: Proteção de redes, sistemas e dados<br>- Tecnologias: Pentest, criptografia, firewalls, SIEM<br>- Mercado: Analista SOC, consultor de segurança, ethical hacker";
+
+        case "4":
+            return "\n>>> Detalhes de Inteligência Artificial:<br>- Foco: Desenvolvimento de sistemas inteligentes<br>- Tecnologias: Machine Learning, Deep Learning, NLP, Python<br>- Mercado: Cientista de dados, engenheiro de ML, pesquisador em IA";
+
+        default:
+            return `\n>>> Comando não reconhecido: ${cmd}. Digite 'help' para ver os disponíveis.`;
+    }
+}
+
 window.onload = async () => {
     hideAscii();
     await typeText(">>> Bem-vindo ao Sistema da Unimar [CYBER SECURITY MODE]");
@@ -97,107 +261,16 @@ window.onload = async () => {
 input.addEventListener("keydown", async function (event) {
     if (event.key === "Enter") {
         const valor = input.value.trim();
+        let resposta = handleCommand(valor);
 
-        if (valor === "help") {
-            printOutput(">>> Comandos disponíveis no sistema:");
-            printOutput("--------------------------------------------------");
-            printOutput("help                - Mostra todos os comandos");
-            printOutput("clear               - Limpa o terminal");
-            printOutput("sudo apt senha      - Descobre e exibe a senha");
-            printOutput("verbose on/off      - Ativa ou desativa detalhes extras");
-            printOutput("unimar-info         - Mostra informações da UNIMAR");
-            printOutput("ls                  - Lista diretórios disponíveis");
-            printOutput("cat alunos.txt      - Lista alunos cadastrados");
-            printOutput("ping unimar.br      - Simula ping para unimar.br");
-            printOutput("matrix              - Ativa efeito Matrix na tela");
-            printOutput("stopmatrix          - Para o efeito Matrix");
-            printOutput("--------------------------------------------------");
-        } else if (valor === "matrix") {
-            await typeText("\nIniciando Matrix...\n", 1);
-            startMatrix();
-        } else if (valor === "stopmatrix") {
-            await typeText("Encerrando Matrix...\n", 1);
-            stopMatrix();
-        } else if (valor === "clear") {
-            output.innerHTML = "";
-            hideAscii();
-        } else if (valor === "sudo apt senha") {
-            printOutput(">>> Senha vazada.<br>>> Senha: CYBER2025");
-        } else if (valor === "verbose on") {
-            verbose = true;
-            printOutput(">>> \n Modo VERBOSE ativado. Saídas mais detalhadas.");
-        } else if (valor === "verbose off") {
-            verbose = false;
-            printOutput(">>> \n Modo VERBOSE desativado.");
-        } else if (valor === "unimar-info") {
-            printOutput(">>> Universidade de Marília - UNIMAR");
-            printOutput(">>> Localização: Marília/SP");
-            printOutput(">>> Fundação: 1988");
-            printOutput(">>> Ranking: Top 10 universidades do interior");
-            printOutput(">>> Cursos: Direito, Medicina, TI, Engenharias...");
-            if (verbose) {
-                printOutput(">>> Infraestrutura: Laboratórios de TI, IoT, IA, Cibersegurança.");
-                printOutput(">>> Parcerias internacionais e foco em inovação tecnológica.");
+        // Se for vazio (ex: clear), não imprime nada
+        if (resposta) {
+            // Se for senha correta, imprime com digitação lenta
+            if (valor.toLowerCase() === senhaCorreta.toLowerCase()) {
+                await typeText(resposta, 1);
+            } else {
+                printOutput(resposta);
             }
-        } else if (valor === "ls") {
-            printOutput("Diretórios disponíveis:");
-            printOutput(" cursos_TI/   alunos/   professores/   biblioteca/");
-        } else if (valor === "cat alunos.txt") {
-            printOutput("[1] João Silva - ADS");
-            printOutput("[2] Maria Santos - Ciência da Computação");
-            printOutput("[3] Felipe Rodrigues - Cybersegurança");
-        } else if (valor === "ping unimar.br") {
-            printOutput("Enviando pacotes para unimar.br [200.160.2.3]...");
-            printOutput("Resposta: tempo=45ms");
-            printOutput("Resposta: tempo=47ms");
-            printOutput("Resposta: tempo=46ms");
-        } else if (valor === senhaCorreta) {
-            await typeText("\n>>> Acesso concedido.");
-            await typeText(">>> Invadindo o banco de dados...");
-            await new Promise(r => setTimeout(r, 1000));
-
-            printAscii();
-
-            await typeText("\n>>> Acesso privilegiado concedido.");
-            await typeText(">>> Dados confidenciais carregados do sistema UNIMAR.");
-            await typeText("------------------------------------------------------");
-            await typeText("- Fundada em: 1988");
-            await typeText("- Local: Marília/SP");
-            await typeText("- Cursos de destaque: TI, Direito, Medicina, Engenharias");
-            await typeText("- Parceiros: Cisco, AWS Academy, IBM SkillsBuild");
-            await typeText("------------------------------------------------------");
-
-            await typeText("\n>>> SELECT * FROM cursos_TI WHERE ativo = 1;");
-            await new Promise(r => setTimeout(r, 1000));
-            await typeText(">>> Conexão estabelecida.");
-            await typeText(">>> 4 registros encontrados.\n");
-            await typeText("[1] Curso: ADS | Duração: 3 anos");
-            await typeText("[2] Curso: Ciências da Computação | Duração: 4 anos");
-            await typeText("[3] Curso: Cybersegurança | Duração: 3 anos");
-            await typeText("[4] Curso: Inteligência Artificial | Duração: 4 anos");
-            await typeText("\n>>> Deseja acessar mais detalhes de um curso? Digite o número [1-4]");
-        } else if (valor === "1") {
-            await typeText("\n>>> Detalhes do curso ADS:");
-            await typeText("- Foco: Desenvolvimento de sistemas e softwares");
-            await typeText("- Tecnologias: Python, Java, SQL, Web");
-            await typeText("- Mercado: Desenvolvedor full-stack, analista de sistemas");
-        } else if (valor === "2") {
-            await typeText("\n>>> Detalhes de Ciências da Computação:");
-            await typeText("- Foco: Projetar, arquitetar e manter softwares complexos");
-            await typeText("- Tecnologias: UML, DevOps, Java, C#, Python");
-            await typeText("- Mercado: Engenheiro de software, arquiteto de sistemas, analista de dados");
-        } else if (valor === "3") {
-            await typeText("\n>>> Detalhes de Cybersegurança:");
-            await typeText("- Foco: Proteção de redes, sistemas e dados");
-            await typeText("- Tecnologias: Pentest, criptografia, firewalls, SIEM");
-            await typeText("- Mercado: Analista SOC, consultor de segurança, ethical hacker");
-        } else if (valor === "4") {
-            await typeText("\n>>> Detalhes de Inteligência Artificial:");
-            await typeText("- Foco: Desenvolvimento de sistemas inteligentes");
-            await typeText("- Tecnologias: Machine Learning, Deep Learning, NLP, Python");
-            await typeText("- Mercado: Cientista de dados, engenheiro de ML, pesquisador em IA");
-        } else {
-            await typeText("\n>>> Instrução detectada. Tente novamente.");
         }
 
         input.value = "";
