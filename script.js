@@ -89,33 +89,35 @@ function handleCommand(cmd) {
 
     switch (cmd) {
         case "help":
-            return `Comandos disponíveis:
+            return `📟 Terminal de Cibersegurança - Comandos disponíveis:
 
 🔹 Informações básicas
-whoami            -> Descubra sua identidade no sistema
-about             -> Saiba mais sobre o projeto de Cibersegurança
-unimar-info       -> Informações oficiais da UNIMAR
-career-path       -> Mostra as possíveis carreiras na área
-salary-info       -> Média salarial dos profissionais
+whoami       -> Descubra sua identidade no sistema (Quem é você neste mundo hacker?)
+about        -> Saiba mais sobre o projeto de Cibersegurança da UNIMAR
+unimar-info  -> Informações oficiais da UNIMAR e como o curso pode mudar sua vida
+career-path  -> Veja as possíveis carreiras em Cibersegurança (Pentester, Analista, SOC, Forense Digital)
+salary-info  -> Descubra quanto ganha um profissional da área 💰
 
 🔹 Simulação de Cibersegurança
-scan unimar.br    -> Simula varredura de portas da UNIMAR
-firewall --status -> Mostra status de proteção do firewall
-traceroute unimar.br -> Exibe a rota de rede até a UNIMAR
-dnslookup unimar.br  -> Faz uma consulta DNS
-ping unimar.br    -> Testa a conectividade com a UNIMAR
-encrypt <texto>   -> Simula criptografia de um texto
-hack-unimar       -> Acesso fictício ao sistema
+scan unimar.br       -> Simula uma varredura de portas da UNIMAR (como os hackers fazem!)
+firewall --status    -> Mostra o status de proteção do firewall (defesa ativa 🚨)
+traceroute unimar.br -> Exibe a rota de rede até a UNIMAR (entenda o caminho dos pacotes)
+dnslookup unimar.br  -> Consulta DNS (descubra informações escondidas na web)
+ping unimar.br       -> Testa conectividade (se a UNIMAR responde rápido, você também pode!)
+encrypt <texto>      -> Simula criptografia de um texto (fundamento da segurança digital 🔐)
+hack-unimar          -> Acesso fictício ao sistema... será que você consegue? 😏
 
 🔹 Comandos especiais
-matrix            -> Ativa o modo Matrix (efeito visual hacker)
-stopmatrix        -> Desativa o modo Matrix
-clear             -> Limpa a tela
-sudo apt senha    -> Descubra a senha de acesso
-CYBER2025         -> Desbloqueia o acesso secreto
-apply             -> Informações para inscrição no curso
+banner          -> Mostra o banner ASCII da UNIMAR
+matrix          -> Ativa o modo Matrix (efeito visual hacker 👾)
+stopmatrix      -> Desativa o modo Matrix
+clear           -> Limpa a tela
+sudo apt senha  -> Tente descobrir a senha de administrador
+CYBER2025       -> Desbloqueia um acesso secreto com mensagem motivadora 🔑
+apply           -> Descubra como se inscrever no curso de Cibersegurança da UNIMAR 🚀
 
-💡 Digite um comando para começar!`;
+💡 Dica: explore os comandos como se fosse um verdadeiro pentester!
+Seu aprendizado começa aqui...`;
 
 
         case "whoami":
@@ -219,7 +221,19 @@ Engenheiro de Cibersegurança: R$ 10.000+
             return "Diretórios disponíveis: cursos_TI/   alunos/   professores/   biblioteca/";
 
         case "cat alunos.txt":
-            return "[1] João Silva - ADS[2] Maria Santos - Ciência da Computação[3] Felipe Rodrigues - Cybersegurança";
+            return `
+            [1] João Silva - ADS
+            [2] Maria Santos - Ciência da Computação
+            [3] Felipe Rodrigues - Cybersegurança
+            [4] Ana Souza - Engenharia de Software
+            [5] Carlos Oliveira - Sistemas de Informação
+            [6] Beatriz Lima - Banco de Dados
+            [7] Rafael Gomes - Redes de Computadores
+            [8] Luana Fernandes - Segurança da Informação
+            [9] Pedro Costa - DevOps
+            [10] Juliana Martins - Inteligência Artificial
+            `;
+
 
         case "ping unimar.br":
             return "\nEnviando pacotes para unimar.br [200.160.2.3]...Resposta: tempo=45msResposta: tempo=47msResposta: tempo=46ms";
@@ -241,11 +255,14 @@ re>>> Acesso concedido.
 >>> SELECT * FROM cursos_TI WHERE ativo = 1;
 >>> Conexão estabelecida.
 >>> 4 registros encontrados.
+
 [1] Curso: ADS | Duração: 3 anos
 [2] Curso: Ciências da Computação | Duração: 4 anos
 [3] Curso: Cybersegurança | Duração: 3 anos
 [4] Curso: Inteligência Artificial | Duração: 4 anos
+
 >>> Deseja acessar mais detalhes de um curso? Digite o número [1-4]
+
 `;
 
         case "1":
@@ -267,9 +284,9 @@ re>>> Acesso concedido.
 
 window.onload = async () => {
     hideAscii();
-    await typeText(">>> Bem-vindo ao Sistema da Unimar [CYBER SECURITY MODE]");
-    await typeText(">>> Insira para acessar o sistema sua senha\n");
-    await typeText(">>> Dica: Use os comandos disponíveis para interagir.\n");
+    await typeText(">>> Bem-vindo ao Sistema da Unimar [CYBER SECURITY MODE]\n");
+    await typeText(">>> Insira para acessar o sistema sua senha\n ");
+    await typeText(">>>Dica: Use os comandos disponíveis para interagir.\n");
 };
 
 input.addEventListener("keydown", async function (event) {
