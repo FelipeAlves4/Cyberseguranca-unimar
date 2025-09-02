@@ -91,9 +91,34 @@ function handleCommand(cmd) {
     switch (cmd) {
         case "help":
             return `Comandos disponíveis:
-whoami, scan unimar.br, encrypt <texto>, firewall --status, 
-traceroute unimar.br, dnslookup unimar.br, hack-unimar, 
-career-path, salary-info, banner, matrix, stopmatrix, about, apply`;
+
+🔹 Informações básicas
+whoami            -> Descubra sua identidade no sistema
+about             -> Saiba mais sobre o projeto de Cibersegurança
+unimar-info       -> Informações oficiais da UNIMAR
+career-path       -> Mostra as possíveis carreiras na área
+salary-info       -> Média salarial dos profissionais
+
+🔹 Simulação de Cibersegurança
+scan unimar.br    -> Simula varredura de portas da UNIMAR
+firewall --status -> Mostra status de proteção do firewall
+traceroute unimar.br -> Exibe a rota de rede até a UNIMAR
+dnslookup unimar.br  -> Faz uma consulta DNS
+ping unimar.br    -> Testa a conectividade com a UNIMAR
+encrypt <texto>   -> Simula criptografia de um texto
+hack-unimar       -> Acesso fictício ao sistema
+
+🔹 Comandos especiais
+banner            -> Mostra o banner ASCII da UNIMAR
+matrix            -> Ativa o modo Matrix (efeito visual hacker)
+stopmatrix        -> Desativa o modo Matrix
+clear             -> Limpa a tela
+sudo apt senha    -> Descubra a senha de acesso
+CYBER2025         -> Desbloqueia o acesso secreto
+apply             -> Informações para inscrição no curso
+
+💡 Digite um comando para começar!`;
+
 
         case "whoami":
             return "Você é um aprendiz de Cibersegurança! Quer descobrir até onde pode chegar?";
@@ -146,15 +171,6 @@ Pentester: R$ 7.000 - 12.000
 Engenheiro de Cibersegurança: R$ 10.000+
 >> A demanda por profissionais cresce todos os anos.`;
 
-        case "banner":
-            return `
-███████╗██╗   ██╗███╗   ██╗██╗███╗   ███╗ █████╗ ██████╗ 
-██╔════╝██║   ██║████╗  ██║██║████╗ ████║██╔══██╗██╔══██╗
-███████╗██║   ██║██╔██╗ ██║██║██╔████╔██║███████║██████╔╝
-╚════██║██║   ██║██║╚██╗██║██║██║╚██╔╝██║██╔══██║██╔═══╝ 
-███████║╚██████╔╝██║ ╚████║██║██║ ╚═╝ ██║██║  ██║██║     
-╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     
-`;
 
         case "matrix":
             startMatrix();
@@ -170,7 +186,7 @@ Engenheiro de Cibersegurança: R$ 10.000+
         case "apply":
             return `🚀 Inscreva-se agora no curso de Cibersegurança da UNIMAR e comece sua jornada!`;
 
-        // Comandos originais do seu terminal
+        //Comandos originais do seu terminal
         case "clear":
             output.innerHTML = "";
             hideAscii();
