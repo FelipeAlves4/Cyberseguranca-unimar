@@ -1,133 +1,143 @@
+/* Base */
 body {
-    background-color: #000;
-    color: #ffffff;
-    font-family: monospace;
-    margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: monospace, Arial, sans-serif;
+  margin: 0;
 }
 
-/* HEADER */
+/* Header */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 20px;
-    background: #111;
-    border-bottom: 2px solid #04d9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  background: #0a0a0a;
+  border-bottom: 2px solid #04d9ff;
 }
 
 header img {
-    width: 150px;
-    position: absolute;
-    left: 20px;
+  width: 150px;
+  position: absolute;
+  left: 20px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2rem;
-    text-align: center;
-    color: #04d9ff;
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+  color: #04d9ff;
 }
 
-/* HERO */
+/* Hero */
 .hero {
-    position: relative;
-    height: 90vh;
-    background: url("imagens/cyberseguranca.webp") no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  height: 90vh;
+  background: url("imagens/cyberseguranca.webp") no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    padding: 20px;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
 }
 
 .hero-content h2 {
-    font-size: 3rem;
-    color: #04d9ff;
-    margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #04d9ff;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
 }
 
-/* BOTÃO CTA */
+/* Botões */
+.cta, .cta-secondary {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
 .cta {
-    display: inline-block;
-    padding: 15px 25px;
-    background: #04d9ff;
-    color: #000;
-    font-weight: bold;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
+  background: #04d9ff;
+  color: #000;
 }
 
 .cta:hover {
-    background: #00aacc;
-    transform: scale(1.05);
+  background: #00aaff;
+  transform: scale(1.05);
 }
 
-/* BOTÃO SECUNDÁRIO */
 .cta-secondary {
-    display: inline-block;
-    margin-left: 15px;
-    padding: 15px 25px;
-    background: transparent;
-    color: #04d9ff;
-    font-weight: bold;
-    border: 2px solid #04d9ff;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
+  background: transparent;
+  border: 2px solid #04d9ff;
+  color: #04d9ff;
 }
 
 .cta-secondary:hover {
-    background: #04d9ff;
-    color: #000;
-    transform: scale(1.05);
+  background: #04d9ff;
+  color: #000;
+  transform: scale(1.05);
 }
 
-
-
-/* SOBRE */
-.sobre {
-    padding: 60px 20px;
-    text-align: center;
-    background: #111;
-}
-
-.sobre h2 {
-    color: #04d9ff;
-    margin-bottom: 20px;
+/* Seções */
+section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .sobre p {
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* FOOTER */
+/* Diferenciais */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #04d9ff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #04d9ff;
+}
+
+/* Rodapé */
 footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    border-top: 1px solid #333;
+  background: #0a0a0a;
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid #04d9ff;
 }
