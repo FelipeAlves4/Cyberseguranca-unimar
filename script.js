@@ -88,7 +88,7 @@ function handleCommand(cmd) {
     cmd = cmd.toLowerCase().trim();
 
     if (cmd === "help") {
-        return `\n📟 Terminal de Cibersegurança - Comandos disponíveis:
+        return `\n\n📟 Terminal de Cibersegurança - Comandos disponíveis:
 
 🔹 Informações básicas
 whoami       -> Descubra sua identidade no sistema (Quem é você neste mundo hacker?)
@@ -118,7 +118,7 @@ apply           -> Descubra como se inscrever no curso de Cibersegurança da UNI
 💡 Dica: explore os comandos como se fosse um verdadeiro pentester!
 Seu aprendizado começa aqui...`;
     } else if (cmd === "whoami") {
-        return "Você é um aprendiz de Cibersegurança! Quer descobrir até onde pode chegar?";
+        return "\nVocê é um aprendiz de Cibersegurança! Quer descobrir até onde pode chegar?\n";
     } else if (cmd === "scan unimar.br") {
         return `Scanning unimar.br...
 [22] SSH - Open
@@ -138,12 +138,12 @@ hop2 100.23.45.67
 hop3 200.155.12.34\n
 >> No curso você vai estudar protocolos de rede e como monitorar tráfego.`;
     } else if (cmd === "dnslookup unimar.br") {
-        return `unimar.br -> 200.155.12.34
+        return `unimar.br -> 200.155.12.34\n
 >> DNS é como a agenda da internet. No curso você aprende como ele pode ser manipulado em ataques.`;
     } else if (cmd === "hack-unimar") {
         return `\nACCESS GRANTED
 ACCESS GRANTED
-ACCESS GRANTED
+ACCESS GRANTED\n
 >> Na vida real, hacking é sobre proteger, não destruir.
 >> No curso você vai aprender o lado ético da força.\n`;
     } else if (cmd === "career-path") {
@@ -165,6 +165,10 @@ Engenheiro de Cibersegurança: R$ 10.000+
     } else if (cmd === "stopmatrix") {
         stopMatrix();
         return "\nEncerrando Matrix mode...";
+    }
+    else if (cmd === "banner") {
+        printAscii();
+        return "";
     } else if (cmd === "about") {
         return `"\nCibersegurança UNIMAR: Aprenda a defender, investigar e proteger o futuro digital.\n"`;
     } else if (cmd === "apply") {
@@ -195,7 +199,7 @@ Engenheiro de Cibersegurança: R$ 10.000+
         }
         return info.join("");
     } else if (cmd === "ls") {
-        return "Diretórios disponíveis: cursos_TI/   alunos/   professores/   biblioteca/";
+        return "\nDiretórios disponíveis: \ncursos_TI/   alunos/   professores/   biblioteca/";
     } else if (cmd === "cat alunos.txt") {
         return `\n
         [1] João Silva - ADS
@@ -210,11 +214,14 @@ Engenheiro de Cibersegurança: R$ 10.000+
         [10] Juliana Martins - Inteligência Artificial
         `;
     } else if (cmd === "ping unimar.br") {
-        return "\nEnviando pacotes para unimar.br [200.160.2.3]...Resposta: tempo=45msResposta: tempo=47msResposta: tempo=46ms";
+        return `\nEnviando pacotes para unimar.br [200.160.2.3]...
+Resposta: tempo=45ms
+Resposta: tempo=47ms
+Resposta: tempo=46ms`;
     } else if (cmd === senhaCorreta.toLowerCase()) {
         printAscii();
         return `
-re>>> Acesso concedido.
+>>> Acesso concedido.
 >>> Invadindo o banco de dados...
 >>> Acesso privilegiado concedido.
 >>> Dados confidenciais carregados do sistema UNIMAR.
@@ -236,13 +243,61 @@ re>>> Acesso concedido.
 >>> Deseja acessar mais detalhes de um curso? Digite o número [1-4]
 `;
     } else if (cmd === "1") {
-        return "\n>>> Detalhes do curso ADS:- Foco: Desenvolvimento de sistemas e softwares- Tecnologias: Python, Java, SQL, Web- Mercado: Desenvolvedor full-stack, analista de sistemas";
+        return `
+>>> Detalhes do curso ADS:
+- Foco: Desenvolvimento de sistemas e softwares
+- Tecnologias: 
+  - Python
+  - Java
+  - SQL
+  - Web
+- Mercado: 
+  - Desenvolvedor full-stack
+  - Analista de sistemas
+`;
     } else if (cmd === "2") {
-        return "\n>>> Detalhes de Ciências da Computação:- Foco: Projetar, arquitetar e manter softwares complexos- Tecnologias: UML, DevOps, Java, C#, Python- Mercado: Engenheiro de software, arquiteto de sistemas, analista de dados";
+        return `
+>>> Detalhes de Ciências da Computação:
+- Foco: Projetar, arquitetar e manter softwares complexos
+- Tecnologias: 
+  - UML
+  - DevOps
+  - Java
+  - C#
+  - Python
+- Mercado: 
+  - Engenheiro de software
+  - Arquiteto de sistemas
+  - Analista de dados
+`;
     } else if (cmd === "3") {
-        return "\n>>> Detalhes de Cybersegurança:- Foco: Proteção de redes, sistemas e dados- Tecnologias: Pentest, criptografia, firewalls, SIEM- Mercado: Analista SOC, consultor de segurança, ethical hacker";
+        return `
+>>> Detalhes de Cybersegurança:
+- Foco: Proteção de redes, sistemas e dados
+- Tecnologias: 
+  - Pentest
+  - Criptografia
+  - Firewalls
+  - SIEM
+- Mercado: 
+  - Analista SOC
+  - Consultor de segurança
+  - Ethical hacker
+`;
     } else if (cmd === "4") {
-        return "\n>>> Detalhes de Inteligência Artificial:- Foco: Desenvolvimento de sistemas inteligentes- Tecnologias: Machine Learning, Deep Learning, NLP, Python- Mercado: Cientista de dados, engenheiro de ML, pesquisador em IA";
+        return `
+>>> Detalhes de Inteligência Artificial:
+- Foco: Desenvolvimento de sistemas inteligentes
+- Tecnologias: 
+  - Machine Learning
+  - Deep Learning
+  - NLP
+  - Python
+- Mercado: 
+  - Cientista de dados
+  - Engenheiro de Machine Learning
+  - Pesquisador em IA
+`;
     } else {
         return `\n>>> Comando não reconhecido: ${cmd}. Digite 'help' para ver os disponíveis.`;
     }
