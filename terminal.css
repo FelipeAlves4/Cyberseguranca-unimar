@@ -1,0 +1,119 @@
+body {
+    background-color: #000;
+    color: #04d9ff;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+
+.terminal {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    justify-content: flex-end; /* Garante que o input fique no final */
+    width: 1000px;
+    height: 500px;
+    background: #000;
+    padding: 20px;
+    border: 2px solid #04d9ff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #04d9ff;
+    overflow: hidden; /* Remove a rolagem */
+    position: relative;
+    z-index: 1; /* Fica acima do canvas */
+}
+#terminal {
+  font-family: monospace;
+  overflow: hidden;
+  white-space: pre; /* mantém os espaços e quebras de linha */
+}
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: none; /* só mostra quando rodar matrix */
+  z-index: 0; /* Fica atrás do terminal */
+  pointer-events: none; /* Permite clicar e digitar no terminal */
+}
+
+
+.dica {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.dica:hover {
+    opacity: 0.8; /* Torna o balão mais discreto ao passar o mouse */
+}
+
+.output {
+    flex-grow: 1;
+    min-height: 100px;
+    white-space: pre;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Courier New', monospace;
+    overflow-y: auto;
+    /* Esconde a barra de rolagem */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE e Edge */
+}
+
+.output::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+}
+
+input {
+    width: 100%;
+    background: black;
+    border: none;
+    color: #04d9ff;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none; /* Remove as setinhas */
+    -webkit-appearance: none; /* Remove as setinhas no WebKit */
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
