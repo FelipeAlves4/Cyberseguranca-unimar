@@ -47,7 +47,7 @@ header h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .hero-content {
@@ -68,7 +68,8 @@ header h1 {
 }
 
 /* Botões */
-.cta, .cta-secondary {
+.cta,
+.cta-secondary {
   display: inline-block;
   margin: 10px;
   padding: 15px 25px;
@@ -107,37 +108,127 @@ section {
 }
 
 .sobre p {
-    font-family: Arial;
+  font-family: Arial;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
 /* Diferenciais */
+.diferenciais {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), 
+              url("imagens/Unimar-laptop.png") no-repeat center center/cover;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.diferenciais::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(4, 217, 255, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+  pointer-events: none;
+}
+
+.diferenciais h2 {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #04d9ff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
 .cards {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-  background: #111;
-  border: 1px solid #04d9ff;
-  border-radius: 12px;
-  padding: 20px;
-  width: 280px;
-  transition: 0.3s;
+  background: rgba(17, 17, 17, 0.95);
+  border: 2px solid #04d9ff;
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(4, 217, 255, 0.1);
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #04d9ff;
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(4, 217, 255, 0.3);
+  border-color: #00aaff;
+  background: rgba(17, 17, 17, 0.98);
+}
+
+.card h3 {
+  color: #04d9ff;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .card p {
-   font-family: Arial;
+  font-family: Arial;
+  line-height: 1.6;
+  color: #e0e0e0;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .diferenciais {
+    min-height: auto;
+    padding: 40px 15px;
+  }
+  
+  .diferenciais h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .cards {
+    gap: 20px;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+  }
+  
+  .card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .diferenciais h2 {
+    font-size: 1.8rem;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .card h3 {
+    font-size: 1.1rem;
+  }
+}
+
 /* Rodapé */
 footer {
   background: #0a0a0a;
