@@ -1,119 +1,143 @@
+/* Base */
 body {
-    background-color: #000;
-    color: #04d9ff;
-    font-family: monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: monospace, Arial, sans-serif;
+  margin: 0;
 }
 
+/* Header */
 header {
-    display: flex;
-    justify-content: right;
-    align-items: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  background: #0a0a0a;
+  border-bottom: 2px solid #04d9ff;
 }
 
-.terminal {
-    display: flex;
-    flex-direction: column; /* Organiza os elementos em coluna */
-    justify-content: flex-end; /* Garante que o input fique no final */
-    width: 1000px;
-    height: 500px;
-    background: #000;
-    padding: 20px;
-    border: 2px solid #04d9ff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #04d9ff;
-    overflow: hidden; /* Remove a rolagem */
-    position: relative;
-    z-index: 1; /* Fica acima do canvas */
+header img {
+  width: 150px;
+  position: absolute;
+  left: 20px;
 }
-#terminal {
-  font-family: monospace;
-  overflow: hidden;
-  white-space: pre; /* mantém os espaços e quebras de linha */
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+  color: #04d9ff;
 }
-#matrix {
-  position: fixed;
+
+/* Hero */
+.hero {
+  height: 90vh;
+  background: url("imagens/cyberseguranca.webp") no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  display: none; /* só mostra quando rodar matrix */
-  z-index: 0; /* Fica atrás do terminal */
-  pointer-events: none; /* Permite clicar e digitar no terminal */
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
 }
 
-
-.dica {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 8px 12px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #333;
-    font-size: 12px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: opacity 0.3s ease;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
 }
 
-.dica:hover {
-    opacity: 0.8; /* Torna o balão mais discreto ao passar o mouse */
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #04d9ff;
 }
 
-.output {
-    flex-grow: 1;
-    min-height: 100px;
-    white-space: pre;
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-    font-family: 'Courier New', monospace;
-    overflow-y: auto;
-    /* Esconde a barra de rolagem */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE e Edge */
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
 }
 
-.output::-webkit-scrollbar {
-    display: none; /* Chrome, Safari e Opera */
+/* Botões */
+.cta, .cta-secondary {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-input {
-    width: 100%;
-    background: black;
-    border: none;
-    color: #04d9ff;
-    font-family: monospace;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    appearance: none; /* Remove as setinhas */
-    -webkit-appearance: none; /* Remove as setinhas no WebKit */
+.cta {
+  background: #04d9ff;
+  color: #000;
 }
 
-.blink {
-    animation: blink 1s infinite;
+.cta:hover {
+  background: #00aaff;
+  transform: scale(1.05);
 }
 
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
+.cta-secondary {
+  background: transparent;
+  border: 2px solid #04d9ff;
+  color: #04d9ff;
+}
 
-    50% {
-        opacity: 0;
-    }
+.cta-secondary:hover {
+  background: #04d9ff;
+  color: #000;
+  transform: scale(1.05);
+}
 
-    100% {
-        opacity: 1;
-    }
+/* Seções */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.sobre p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Diferenciais */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #04d9ff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #04d9ff;
+}
+
+/* Rodapé */
+footer {
+  background: #0a0a0a;
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid #04d9ff;
 }
