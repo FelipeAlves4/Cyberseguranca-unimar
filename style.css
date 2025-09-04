@@ -107,11 +107,67 @@ section {
   text-align: center;
 }
 
+/* Seção Sobre */
+.sobre {
+  padding: 60px 20px;
+}
+
+.sobre h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #04d9ff;
+}
+
+.sobre h3 {
+  font-size: 1.8rem;
+  margin: 40px 0 20px 0;
+  color: #04d9ff;
+}
+
 .sobre p {
   font-family: Arial;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+}
+
+.sobre ul {
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+
+.sobre li {
+  background: rgba(17, 17, 17, 0.8);
+  border: 1px solid rgba(4, 217, 255, 0.3);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  font-family: Arial;
   line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.sobre li:hover {
+  border-color: #04d9ff;
+  background: rgba(17, 17, 17, 0.9);
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(4, 217, 255, 0.2);
+}
+
+.sobre li strong {
+  color: #04d9ff;
+}
+
+.sobre p strong {
+  color: #04d9ff;
+  font-size: 1.2rem;
 }
 
 /* Diferenciais */
@@ -190,6 +246,30 @@ section {
 
 /* Responsividade */
 @media (max-width: 768px) {
+  .sobre {
+    padding: 60px 15px;
+  }
+  
+  .sobre h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  
+  .sobre h3 {
+    font-size: 1.5rem;
+    margin: 30px 0 15px 0;
+  }
+  
+  .sobre p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .sobre li {
+    padding: 12px 15px;
+    margin: 8px 0;
+  }
+  
   .diferenciais {
     min-height: auto;
     padding: 40px 15px;
@@ -216,6 +296,23 @@ section {
 }
 
 @media (max-width: 480px) {
+  .sobre h2 {
+    font-size: 1.8rem;
+  }
+  
+  .sobre h3 {
+    font-size: 1.3rem;
+  }
+  
+  .sobre p {
+    font-size: 0.95rem;
+  }
+  
+  .sobre li {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
   .diferenciais h2 {
     font-size: 1.8rem;
   }
