@@ -116,7 +116,7 @@ CYBER2025       -> Desbloqueia um acesso secreto com mensagem motivadora 🔑
 apply           -> Descubra como se inscrever no curso de Cibersegurança da UNIMAR 🚀
 
 💡 Dica: explore os comandos como se fosse um verdadeiro pentester!
-Seu aprendizado começa aqui...`;
+Seu aprendizado começa aqui...\n`;
     } else if (cmd === "whoami") {
         return "\nVocê é um aprendiz de Cibersegurança! Quer descobrir até onde pode chegar?\n";
     } else if (cmd === "scan unimar.br") {
@@ -124,10 +124,10 @@ Seu aprendizado começa aqui...`;
 [22] SSH - Open
 [80] HTTP - Open
 [443] HTTPS - Open
->> No curso você vai aprender a fazer testes de vulnerabilidade de forma ética.`;
+>> No curso você vai aprender a fazer testes de vulnerabilidade de forma ética.\n`;
     } else if (cmd === "encrypt minha_senha") {
         return `SHA256: 5f4dcc3b5aa765d61d8327deb882cf99
->> Você aprenderá a proteger dados com criptografia.`;
+>> Você aprenderá a proteger dados com criptografia.\n`;
     } else if (cmd === "firewall --status") {
         return `Firewall ativo: bloqueando 124 tentativas de invasão por segundo
 >> Quer aprender a configurar firewalls? Esse é só o começo.`;
@@ -139,7 +139,7 @@ hop3 200.155.12.34\n
 >> No curso você vai estudar protocolos de rede e como monitorar tráfego.`;
     } else if (cmd === "dnslookup unimar.br") {
         return `unimar.br -> 200.155.12.34\n
->> DNS é como a agenda da internet. No curso você aprende como ele pode ser manipulado em ataques.`;
+>> DNS é como a agenda da internet. No curso você aprende como ele pode ser manipulado em ataques.\n`;
     } else if (cmd === "hack-unimar") {
         return `\nACCESS GRANTED
 ACCESS GRANTED
@@ -163,7 +163,7 @@ Engenheiro de Cibersegurança: R$ 10.000+
         startMatrix();
         return "\nIniciando Matrix mode...";
     } else if (cmd === "stopmatrix") {
-        stopMatrix();
+        stopMatrix();   
         return "\nEncerrando Matrix mode...";
     }
     else if (cmd === "banner") {
@@ -187,11 +187,11 @@ Engenheiro de Cibersegurança: R$ 10.000+
         return ">>> \n Modo VERBOSE desativado.";
     } else if (cmd === "unimar-info") {
         let info = [
-            ">>> Universidade de Marília - UNIMAR",
+            "\n>>> Universidade de Marília - UNIMAR",
             ">>> Localização: Marília/SP",
             ">>> Fundação: 1988",
             ">>> Ranking: Top 10 universidades do interior",
-            ">>> Cursos: Direito, Medicina, TI, Engenharias..."
+            ">>> Cursos: Direito, Medicina, TI, Engenharias...\n"
         ];
         if (verbose) {
             info.push(">>> Infraestrutura: Laboratórios de TI, IoT, IA, Cibersegurança.");
@@ -217,7 +217,7 @@ Engenheiro de Cibersegurança: R$ 10.000+
         return `\nEnviando pacotes para unimar.br [200.160.2.3]...
 Resposta: tempo=45ms
 Resposta: tempo=47ms
-Resposta: tempo=46ms`;
+Resposta: tempo=46ms\n`;
     } else if (cmd === senhaCorreta.toLowerCase()) {
         printAscii();
         return `
@@ -253,7 +253,7 @@ Resposta: tempo=46ms`;
   - Web
 - Mercado: 
   - Desenvolvedor full-stack
-  - Analista de sistemas
+  - Analista de sistemas \n
 `;
     } else if (cmd === "2") {
         return `
