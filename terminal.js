@@ -24,7 +24,7 @@ function startMatrix() {
         ctx.fillStyle = "rgba(0,0,0,0.05)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = "#0F0";
+        ctx.fillStyle = "#04d9ff";
         ctx.font = fontSize + "px monospace";
 
         for (let i = 0; i < drops.length; i++) {
@@ -45,7 +45,7 @@ function stopMatrix() {
     clearInterval(matrixInterval);
 }
 
-// Função para simular digitação lenta
+//Função para simular digitação lenta
 function typeText(text, delay = 30) {
     return new Promise(resolve => {
         let i = 0;
@@ -118,9 +118,9 @@ apply           -> Descubra como se inscrever no curso de Cibersegurança da UNI
 💡 Dica: explore os comandos como se fosse um verdadeiro pentester!
 Seu aprendizado começa aqui...\n`;
     } else if (cmd === "whoami") {
-        return "\nVocê é um aprendiz de Cibersegurança! Quer descobrir até onde pode chegar?\n";
+        return "\nVocê é um aprendiz de Cybersegurança! Quer descobrir até onde pode chegar?\n";
     } else if (cmd === "scan unimar.br") {
-        return `Scanning unimar.br...
+        return `\nScanning unimar.br...
 [22] SSH - Open
 [80] HTTP - Open
 [443] HTTPS - Open
@@ -129,7 +129,7 @@ Seu aprendizado começa aqui...\n`;
         return `SHA256: 5f4dcc3b5aa765d61d8327deb882cf99
 >> Você aprenderá a proteger dados com criptografia.\n`;
     } else if (cmd === "firewall --status") {
-        return `Firewall ativo: bloqueando 124 tentativas de invasão por segundo
+        return `\nFirewall ativo: bloqueando 124 tentativas de invasão por segundo
 >> Quer aprender a configurar firewalls? Esse é só o começo.`;
     } else if (cmd === "traceroute unimar.br") {
         return `\nRastreando rota para unimar.br...
@@ -138,7 +138,7 @@ hop2 100.23.45.67
 hop3 200.155.12.34\n
 >> No curso você vai estudar protocolos de rede e como monitorar tráfego.`;
     } else if (cmd === "dnslookup unimar.br") {
-        return `unimar.br -> 200.155.12.34\n
+        return `\nunimar.br -> 200.155.12.34\n
 >> DNS é como a agenda da internet. No curso você aprende como ele pode ser manipulado em ataques.\n`;
     } else if (cmd === "hack-unimar") {
         return `\nACCESS GRANTED
@@ -220,7 +220,7 @@ Resposta: tempo=47ms
 Resposta: tempo=46ms\n`;
     } else if (cmd === senhaCorreta.toLowerCase()) {
         printAscii();
-        return `
+        return `\n
 >>> Acesso concedido.
 >>> Invadindo o banco de dados...
 >>> Acesso privilegiado concedido.
@@ -244,7 +244,7 @@ Resposta: tempo=46ms\n`;
 `;
     } else if (cmd === "1") {
         return `
->>> Detalhes do curso ADS:
+\n>>> Detalhes do curso ADS:
 - Foco: Desenvolvimento de sistemas e softwares
 - Tecnologias: 
   - Python
@@ -272,7 +272,7 @@ Resposta: tempo=46ms\n`;
 `;
     } else if (cmd === "3") {
         return `
->>> Detalhes de Cybersegurança:
+\n>>> Detalhes de Cybersegurança:
 - Foco: Proteção de redes, sistemas e dados
 - Tecnologias: 
   - Pentest
@@ -286,7 +286,7 @@ Resposta: tempo=46ms\n`;
 `;
     } else if (cmd === "4") {
         return `
->>> Detalhes de Inteligência Artificial:
+\n>>> Detalhes de Inteligência Artificial:
 - Foco: Desenvolvimento de sistemas inteligentes
 - Tecnologias: 
   - Machine Learning
