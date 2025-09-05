@@ -31,7 +31,7 @@ header h1 {
 }
 
 /* Hero */
-.hero {
+.principal {
   height: 90vh;
   background: url("imagens/cyberseguranca.webp") no-repeat center center/cover;
   position: relative;
@@ -41,7 +41,7 @@ header h1 {
   text-align: center;
 }
 
-.hero .overlay {
+.principal .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -50,19 +50,19 @@ header h1 {
   background: rgba(0, 0, 0, 0.7);
 }
 
-.hero-content {
+.principal-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
 }
 
-.hero-content h2 {
+.principal-content h2 {
   font-size: 3rem;
   margin-bottom: 15px;
   color: #04d9ff;
 }
 
-.hero-content p {
+.principal-content p {
   font-size: 1.2rem;
   margin-bottom: 25px;
 }
@@ -112,7 +112,6 @@ section {
   padding: 60px 20px;
 }
 
-
 .sobre h2 {
   font-size: 2.5rem;
   margin-bottom: 30px;
@@ -138,7 +137,34 @@ section {
   color: #e0e0e0;
 }
 
-.sobre ul {
+.sobre p strong {
+  color: #04d9ff;
+  font-size: 1.2rem;
+}
+
+/* Seção Conteúdo do Curso */
+.conteudo-curso {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, rgba(4, 217, 255, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.conteudo-curso h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #04d9ff;
+}
+
+.conteudo-curso h3 {
+  font-size: 1.8rem;
+  margin: 40px 0 20px 0;
+  color: #04d9ff;
+}
+
+.conteudo-curso img{
+  width: 45px;
+}
+
+.conteudo-curso ul {
   max-width: 900px;
   margin: 0 auto 30px auto;
   text-align: left;
@@ -146,7 +172,7 @@ section {
   padding: 0;
 }
 
-.sobre li {
+.conteudo-curso li {
   background: rgba(17, 17, 17, 0.8);
   border: 1px solid rgba(4, 217, 255, 0.3);
   border-radius: 10px;
@@ -159,20 +185,15 @@ section {
   color: #e0e0e0;
 }
 
-.sobre li:hover {
+.conteudo-curso li:hover {
   border-color: #04d9ff;
   background: rgba(17, 17, 17, 0.9);
   transform: translateX(10px);
   box-shadow: 0 5px 15px rgba(4, 217, 255, 0.2);
 }
 
-.sobre li strong {
+.conteudo-curso li strong {
   color: #04d9ff;
-}
-
-.sobre p strong {
-  color: #04d9ff;
-  font-size: 1.2rem;
 }
 
 /* Diferenciais */
@@ -270,7 +291,21 @@ section {
     line-height: 1.6;
   }
   
-  .sobre li {
+  .conteudo-curso {
+    padding: 60px 15px;
+  }
+  
+  .conteudo-curso h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  
+  .conteudo-curso h3 {
+    font-size: 1.5rem;
+    margin: 30px 0 15px 0;
+  }
+  
+  .conteudo-curso li {
     padding: 12px 15px;
     margin: 8px 0;
   }
@@ -313,7 +348,15 @@ section {
     font-size: 0.95rem;
   }
   
-  .sobre li {
+  .conteudo-curso h2 {
+    font-size: 1.8rem;
+  }
+  
+  .conteudo-curso h3 {
+    font-size: 1.3rem;
+  }
+  
+  .conteudo-curso li {
     padding: 10px 12px;
     font-size: 0.9rem;
   }
