@@ -42,9 +42,9 @@ header {
   width: 100vw;
   height: 100vh;
   background: black;
-  display: none; /* só mostra quando rodar matrix */
-  z-index: 0; /* Fica atrás do terminal */
-  pointer-events: none; /* Permite clicar e digitar no terminal */
+  display: none; 
+  z-index: 0; 
+  pointer-events: none; 
 }
 
 
@@ -64,7 +64,7 @@ header {
 }
 
 .dica:hover {
-    opacity: 0.8; /* Torna o balão mais discreto ao passar o mouse */
+    opacity: 0.8;
 }
 
 .output {
