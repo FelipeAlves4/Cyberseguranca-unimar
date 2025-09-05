@@ -19,8 +19,6 @@ header {
 
 header img {
   width: 150px;
-  position: absolute;
-  left: 20px;
 }
 
 header h1 {
@@ -33,12 +31,13 @@ header h1 {
 /* Hero */
 .principal {
   height: 90vh;
-  background: url("imagens/Cibersegurança_Alta.png") no-repeat center center/cover;
+  background: url("imagens/cyberseguranca.webp") no-repeat center center/cover;
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
+  padding-top: 80px;
 }
 
 .principal .overlay {
@@ -56,6 +55,19 @@ header h1 {
   max-width: 800px;
 }
 
+.principal h1 {
+  font-size: 4.5rem;
+  margin-top: 0px;   
+  margin-bottom: 65px;    
+  background: linear-gradient(135deg, #00ffff, #04d9ff, #0080ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+}
+
 .principal-content h2 {
   font-size: 3rem;
   margin-bottom: 15px;
@@ -64,7 +76,9 @@ header h1 {
 
 .principal-content p {
   font-size: 1.2rem;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+  line-height: 1.6;
 }
 
 /* Botões */
@@ -116,16 +130,33 @@ section {
   font-size: 2.5rem;
   margin-bottom: 30px;
   color: #04d9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .sobre h3 {
   font-size: 1.8rem;
   margin: 40px 0 20px 0;
   color: #04d9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .sobre img{
   width: 45px;
+  height: 45px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.sobre img:hover {
+  transform: scale(1.1);
 }
 
 .sobre p {
@@ -152,16 +183,40 @@ section {
   font-size: 2.5rem;
   margin-bottom: 30px;
   color: #04d9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .conteudo-curso h3 {
   font-size: 1.8rem;
   margin: 40px 0 20px 0;
   color: #04d9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .conteudo-curso img{
   width: 45px;
+  height: 45px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.conteudo-curso img:hover {
+  transform: scale(1.1);
+}
+
+/* Alinhamento específico para a lâmpada */
+.conteudo-curso h3 img[src*="lampada"] {
+  vertical-align: middle;
+  margin-bottom: 2px;
+  filter: drop-shadow(0 0 8px rgba(4, 217, 255, 0.3));
 }
 
 .conteudo-curso ul {
@@ -272,6 +327,14 @@ section {
 
 /* Responsividade */
 @media (max-width: 768px) {
+  .principal {
+    padding-top: 60px;
+  }
+  
+  .principal h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
   .sobre {
     padding: 60px 15px;
   }
@@ -279,11 +342,18 @@ section {
   .sobre h2 {
     font-size: 2rem;
     margin-bottom: 25px;
+    gap: 10px;
   }
   
   .sobre h3 {
     font-size: 1.5rem;
     margin: 30px 0 15px 0;
+    gap: 10px;
+  }
+  
+  .sobre img {
+    width: 35px;
+    height: 35px;
   }
   
   .sobre p {
@@ -298,11 +368,22 @@ section {
   .conteudo-curso h2 {
     font-size: 2rem;
     margin-bottom: 25px;
+    gap: 10px;
   }
   
   .conteudo-curso h3 {
     font-size: 1.5rem;
     margin: 30px 0 15px 0;
+    gap: 10px;
+  }
+  
+  .conteudo-curso img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .conteudo-curso h3 img[src*="lampada"] {
+    margin-bottom: 1px;
   }
   
   .conteudo-curso li {
@@ -336,12 +417,27 @@ section {
 }
 
 @media (max-width: 480px) {
+  .principal {
+    padding-top: 40px;
+  }
+  
+  .principal h1 {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+  }
   .sobre h2 {
     font-size: 1.8rem;
+    gap: 8px;
   }
   
   .sobre h3 {
     font-size: 1.3rem;
+    gap: 8px;
+  }
+  
+  .sobre img {
+    width: 30px;
+    height: 30px;
   }
   
   .sobre p {
@@ -350,10 +446,21 @@ section {
   
   .conteudo-curso h2 {
     font-size: 1.8rem;
+    gap: 8px;
   }
   
   .conteudo-curso h3 {
     font-size: 1.3rem;
+    gap: 8px;
+  }
+  
+  .conteudo-curso img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .conteudo-curso h3 img[src*="lampada"] {
+    margin-bottom: 0px;
   }
   
   .conteudo-curso li {
