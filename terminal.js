@@ -243,8 +243,7 @@ Resposta: tempo=46ms\n`;
 [3] Curso: Cybersegurança | Duração: 3 anos
 [4] Curso: Inteligência Artificial | Duração: 4 anos
 
->>> Deseja acessar mais detalhes de um curso? Digite o número [1-4]
-`;
+>>> Deseja acessar mais detalhes de um curso? Digite o número [1-4]\n`;
     } else if (cmd === "1") {
         return `
 \n>>> Detalhes do curso ADS:
@@ -258,6 +257,7 @@ Resposta: tempo=46ms\n`;
   - Desenvolvedor full-stack
   - Analista de sistemas \n
 `;
+        
     } else if (cmd === "2") {
         return `
 >>> Detalhes de Ciências da Computação:
@@ -299,7 +299,7 @@ Resposta: tempo=46ms\n`;
 - Mercado: 
   - Cientista de dados
   - Engenheiro de Machine Learning
-  - Pesquisador em IA
+  - Engenheiro de prompts \n
 `;
     } else {
         return `\n>>> Comando não reconhecido: ${cmd}. Digite 'help' para ver os disponíveis.`;
@@ -318,7 +318,7 @@ input.addEventListener("keydown", async function (event) {
         const valor = input.value.trim();
         let resposta = handleCommand(valor);
 
-        //Se for vazio (ex: clear), não imprime nada
+        //Se for vazio, não imprime nada
         if (resposta) {
             //Se for senha correta, imprime com digitação lenta
             if (valor.toLowerCase() === senhaCorreta.toLowerCase()) {
