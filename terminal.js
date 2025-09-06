@@ -214,14 +214,14 @@ Engenheiro de Cibersegurança: R$ 10.000+
     } else if (cmd === "unimar-info") {
         let info = [
             "\n>>> Universidade de Marília - UNIMAR",
-            ">>> Localização: Marília/SP",
-            ">>> Fundação: 1988",
-            ">>> Ranking: Top 10 universidades do interior",
-            ">>> Cursos: Direito, Medicina, TI, Engenharias...\n"
+            "\n>>> Localização: Marília/SP",
+            "\n>>> Fundação: 1988",
+            "\n>>> Ranking: Top 10 universidades do interior",
+            "\n>>> Cursos: Direito, Medicina, TI, Engenharias...\n"
         ];
         if (verbose) {
-            info.push(">>> Infraestrutura: Laboratórios de TI, IoT, IA, Cibersegurança.");
-            info.push(">>> Parcerias internacionais e foco em inovação tecnológica.");
+            info.push("\n>>> Infraestrutura: Laboratórios de TI, IoT, IA, Cibersegurança.");
+            info.push("\n>>> Parcerias internacionais e foco em inovação tecnológica.");
         }
         return info.join("");
     } else if (cmd === "ls") {
