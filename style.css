@@ -28,7 +28,7 @@ header h1 {
   color: #04d9ff;
 }
 
-/* Hero */
+/* Principal */
 .principal {
   height: 90vh;
   background: url("imagens/cyberseguranca.webp") no-repeat center center/cover;
@@ -115,7 +115,7 @@ header h1 {
   transform: scale(1.05);
 }
 
-/* Seções */
+/* Seçoes */
 section {
   padding: 60px 20px;
   text-align: center;
@@ -173,7 +173,7 @@ section {
   font-size: 1.2rem;
 }
 
-/* Seção Conteúdo do Curso */
+/* Seçao Conteudo do curso */
 .conteudo-curso {
   padding: 60px 20px;
   background: linear-gradient(135deg, rgba(9, 148, 173, 0.116) 0%, rgba(0, 0, 0, 0.8) 100%);
@@ -212,7 +212,7 @@ section {
   transform: scale(1.1);
 }
 
-/* Alinhamento específico para a lâmpada */
+/* Alinhamento especifico para a lampada */
 .conteudo-curso h3 img[src*="lampada"] {
   vertical-align: middle;
   margin-bottom: 2px;
@@ -325,163 +325,7 @@ section {
   color: #e0e0e0;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .principal {
-    padding-top: 60px;
-  }
-  
-  .principal h1 {
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-  }
-  .sobre {
-    padding: 60px 15px;
-  }
-  
-  .sobre h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-    gap: 10px;
-  }
-  
-  .sobre h3 {
-    font-size: 1.5rem;
-    margin: 30px 0 15px 0;
-    gap: 10px;
-  }
-  
-  .sobre img {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .sobre p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .conteudo-curso {
-    padding: 60px 15px;
-  }
-  
-  .conteudo-curso h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-    gap: 10px;
-  }
-  
-  .conteudo-curso h3 {
-    font-size: 1.5rem;
-    margin: 30px 0 15px 0;
-    gap: 10px;
-  }
-  
-  .conteudo-curso img {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .conteudo-curso h3 img[src*="lampada"] {
-    margin-bottom: 1px;
-  }
-  
-  .conteudo-curso li {
-    padding: 12px 15px;
-    margin: 8px 0;
-  }
-  
-  .diferenciais {
-    min-height: auto;
-    padding: 40px 15px;
-  }
-  
-  .diferenciais h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-  
-  .cards {
-    gap: 20px;
-  }
-  
-  .card {
-    width: 100%;
-    max-width: 350px;
-    padding: 20px;
-  }
-  
-  .card h3 {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .principal {
-    padding-top: 40px;
-  }
-  
-  .principal h1 {
-    font-size: 2rem;
-    letter-spacing: 0.5px;
-  }
-  .sobre h2 {
-    font-size: 1.8rem;
-    gap: 8px;
-  }
-  
-  .sobre h3 {
-    font-size: 1.3rem;
-    gap: 8px;
-  }
-  
-  .sobre img {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .sobre p {
-    font-size: 0.95rem;
-  }
-  
-  .conteudo-curso h2 {
-    font-size: 1.8rem;
-    gap: 8px;
-  }
-  
-  .conteudo-curso h3 {
-    font-size: 1.3rem;
-    gap: 8px;
-  }
-  
-  .conteudo-curso img {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .conteudo-curso h3 img[src*="lampada"] {
-    margin-bottom: 0px;
-  }
-  
-  .conteudo-curso li {
-    padding: 10px 12px;
-    font-size: 0.9rem;
-  }
-  
-  .diferenciais h2 {
-    font-size: 1.8rem;
-  }
-  
-  .card {
-    padding: 15px;
-  }
-  
-  .card h3 {
-    font-size: 1.1rem;
-  }
-}
-
-/* Rodapé */
+/* Rodape */
 footer {
   background: #0a0a0a;
   text-align: center;
