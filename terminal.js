@@ -117,31 +117,50 @@ sudo apt senha  -> Tente descobrir a senha de administrador
 CYBER2025       -> Desbloqueia um acesso secreto com mensagem motivadora 🔑
 apply           -> Descubra como se inscrever no curso de Cibersegurança da UNIMAR 🚀
 
+🔹 Modo Verbose (informações detalhadas)
+verbose         -> Ativa modo verbose com informações técnicas detalhadas 🔍
+verbose off     -> Desativa o modo verbose
+verbose status  -> Verifica se o modo verbose está ativo
+
 💡 Dica: explore os comandos como se fosse um verdadeiro pentester!
 Seu aprendizado começa aqui...\n`;
     } else if (cmd === "whoami") {
-        return "\nVocê é um aprendiz de Cybersegurança! Quer descobrir até onde pode chegar?\n";
+        let result = "\nVocê é um aprendiz de Cybersegurança! Quer descobrir até onde pode chegar?\n";
+        if (verbose) {
+            result += "\n[VERBOSE] Informações do usuário:\n- Nível: Iniciante\n- Permissões: Usuário padrão\n- Sessão ativa: 00:15:32\n- Último login: Hoje 14:30\n- Grupo: estudantes\n";
+        }
+        return result;
     } else if (cmd === "scan unimar.br") {
-        return `\nScanning unimar.br...
-[22] SSH - Open
-[80] HTTP - Open
-[443] HTTPS - Open
->> No curso você vai aprender a fazer testes de vulnerabilidade de forma ética.\n`;
+        let result = `\nScanning unimar.br...\n[22] SSH - Open\n[80] HTTP - Open\n[443] HTTPS - Open\n`;
+        if (verbose) {
+            result += `\n[VERBOSE] Detalhes técnicos:\n- Porta 22: SSH versão 2.0, criptografia AES-256\n- Porta 80: Apache 2.4.41, PHP 7.4\n- Porta 443: TLS 1.3, certificado válido\n- Tempo de resposta médio: 45ms\n- Firewall detectado: iptables ativo\n`;
+        }
+        result += `>> No curso você vai aprender a fazer testes de vulnerabilidade de forma ética.\n`;
+        return result;
     } else if (cmd === "encrypt minha_senha") {
         return `SHA256: 5f4dcc3b5aa765d61d8327deb882cf99
 >> Você aprenderá a proteger dados com criptografia.\n`;
     } else if (cmd === "firewall --status") {
-        return `\nFirewall ativo: bloqueando 124 tentativas de invasão por segundo
->> Quer aprender a configurar firewalls? Esse é só o começo.`;
+        let result = `\nFirewall ativo: bloqueando 124 tentativas de invasão por segundo\n`;
+        if (verbose) {
+            result += `\n[VERBOSE] Configuração detalhada:\n- Regras ativas: 847\n- Logs gerados: 2.3GB/dia\n- Região bloqueada: 15 países\n- Ataques DDoS bloqueados: 23 hoje\n- Uptime: 99.7%\n- Versão: iptables 1.8.7\n`;
+        }
+        result += `>> Quer aprender a configurar firewalls? Esse é só o começo.`;
+        return result;
     } else if (cmd === "traceroute unimar.br") {
-        return `\nRastreando rota para unimar.br...
-hop1 192.168.0.1
-hop2 100.23.45.67
-hop3 200.155.12.34\n
->> No curso você vai estudar protocolos de rede e como monitorar tráfego.`;
+        let result = `\nRastreando rota para unimar.br...\nhop1 192.168.0.1\nhop2 100.23.45.67\nhop3 200.155.12.34\n`;
+        if (verbose) {
+            result += `\n[VERBOSE] Análise de rede:\n- Hop 1: Gateway local (1ms)\n- Hop 2: Provedor regional (15ms)\n- Hop 3: Backbone nacional (45ms)\n- Protocolo: ICMP\n- TTL inicial: 64\n- Pacotes perdidos: 0%\n`;
+        }
+        result += `\n>> No curso você vai estudar protocolos de rede e como monitorar tráfego.`;
+        return result;
     } else if (cmd === "dnslookup unimar.br") {
-        return `\nunimar.br -> 200.155.12.34\n
->> DNS é como a agenda da internet. No curso você aprende como ele pode ser manipulado em ataques.\n`;
+        let result = `\nunimar.br -> 200.155.12.34\n`;
+        if (verbose) {
+            result += `\n[VERBOSE] Informações DNS detalhadas:\n- Tipo: A (IPv4)\n- TTL: 3600 segundos\n- Servidor DNS: 8.8.8.8\n- Autoridade: ns1.unimar.br\n- MX Record: mail.unimar.br (prioridade 10)\n- TXT Record: "v=spf1 include:_spf.google.com ~all"\n`;
+        }
+        result += `\n>> DNS é como a agenda da internet. No curso você aprende como ele pode ser manipulado em ataques.\n`;
+        return result;
     } else if (cmd === "hack-unimar") {
         return `\nACCESS GRANTED
 ACCESS GRANTED
@@ -182,12 +201,16 @@ Engenheiro de Cibersegurança: R$ 10.000+
         return "";
     } else if (cmd === "sudo apt senha") {
         return "\n\n>>> Senha vazada.\n>>> Senha: CYBER2025";
-    } else if (cmd === "verbose on") {
+    } else if (cmd === "verbose on" || cmd === "verbose") {
         verbose = true;
-        return ">>> \n Modo VERBOSE ativado. Saídas mais detalhadas.";
+        updatePrompt();
+        return "\n>>> Modo VERBOSE ativado! 🔍\n>>> Agora você receberá informações detalhadas e técnicas.\n>>> Use 'verbose off' para desativar.";
     } else if (cmd === "verbose off") {
         verbose = false;
-        return ">>> \n Modo VERBOSE desativado.";
+        updatePrompt();
+        return "\n>>> Modo VERBOSE desativado.\n>>> Retornando ao modo normal.";
+    } else if (cmd === "verbose status") {
+        return verbose ? "\n>>> Status: VERBOSE ATIVO 🔍" : "\n>>> Status: VERBOSE INATIVO";
     } else if (cmd === "unimar-info") {
         let info = [
             "\n>>> Universidade de Marília - UNIMAR",
@@ -202,7 +225,11 @@ Engenheiro de Cibersegurança: R$ 10.000+
         }
         return info.join("");
     } else if (cmd === "ls") {
-        return "\nDiretórios disponíveis: \ncursos_TI/   alunos/   professores/   biblioteca/";
+        let result = "\nDiretórios disponíveis: \ncursos_TI/   alunos/   professores/   biblioteca/";
+        if (verbose) {
+            result += "\n\n[VERBOSE] Detalhes dos diretórios:\n- cursos_TI/: 4 subdiretórios, 156 arquivos\n- alunos/: 1.247 registros, 2.3MB\n- professores/: 89 perfis, 1.1MB\n- biblioteca/: 15.432 livros, 2.1TB\n- Permissões: drwxr-xr-x (755)\n- Proprietário: root:root\n";
+        }
+        return result;
     } else if (cmd === "cat alunos.txt") {
         return `\n
         [1] João Silva - ADS
@@ -217,10 +244,11 @@ Engenheiro de Cibersegurança: R$ 10.000+
         [10] Juliana Martins - Inteligência Artificial
         `;
     } else if (cmd === "ping unimar.br") {
-        return `\nEnviando pacotes para unimar.br [200.160.2.3]...
-Resposta: tempo=45ms
-Resposta: tempo=47ms
-Resposta: tempo=46ms\n`;
+        let result = `\nEnviando pacotes para unimar.br [200.160.2.3]...\nResposta: tempo=45ms\nResposta: tempo=47ms\nResposta: tempo=46ms\n`;
+        if (verbose) {
+            result += `\n[VERBOSE] Estatísticas de ping:\n- Pacotes enviados: 3\n- Pacotes recebidos: 3\n- Perda de pacotes: 0%\n- Tempo mínimo: 45ms\n- Tempo máximo: 47ms\n- Tempo médio: 46ms\n- Tamanho do pacote: 32 bytes\n`;
+        }
+        return result;
     } else if (cmd === senhaCorreta.toLowerCase()) {
         printAscii();
         return `\n
@@ -306,11 +334,22 @@ Resposta: tempo=46ms\n`;
     }
 }
 
+function updatePrompt() {
+    const prompt = document.getElementById("prompt");
+    if (verbose) {
+        prompt.textContent = "unimar@cyber:~$ [VERBOSE] ";
+    } else {
+        prompt.textContent = "unimar@cyber:~$ ";
+    }
+}
+
 window.onload = async () => {
     hideAscii();
+    updatePrompt();
     await typeText(">>> Bem-vindo ao Sistema da Unimar [CYBER SECURITY MODE]\n");
     await typeText(">>> Insira para acessar o sistema sua senha\n ");
     await typeText("\n>>> Dica: Use os comandos disponíveis para interagir.");
+    await typeText("\n>>> Digite 'verbose' para ativar modo detalhado.");
 };
 
 input.addEventListener("keydown", async function (event) {
