@@ -45,7 +45,7 @@ function stopMatrix() {
     clearInterval(matrixInterval);
 }
 
-//Função para simular digitação lenta
+//Função pra simular digitacão lenta
 function typeText(text, delay = 30) {
     return new Promise(resolve => {
         let i = 0;
@@ -78,12 +78,12 @@ function printAscii() {
     asciiUnimar.style.display = "block";
 }
 
-//Função para esconder o ASCII art
+//Funcão para esconder o ASCII art
 function hideAscii() {
     asciiUnimar.style.display = "none";
 }
 
-//Função para lidar com cada comando
+//Função dos comandos
 function handleCommand(cmd) {
     cmd = cmd.toLowerCase().trim();
 
@@ -96,6 +96,8 @@ about        -> Saiba mais sobre o projeto de Cibersegurança da UNIMAR
 unimar-info  -> Informações oficiais da UNIMAR e como o curso pode mudar sua vida
 career-path  -> Veja as possíveis carreiras em Cibersegurança (Pentester, Analista, SOC, Forense Digital)
 salary-info  -> Descubra quanto ganha um profissional da área 💰
+ls           -> Lista diretórios disponíveis (explore o sistema de arquivos!)
+cat alunos.txt -> Mostra uma lista fictícia de alunos (quem está aprendendo com você?)
 
 🔹 Simulação de Cibersegurança
 scan unimar.br       -> Simula uma varredura de portas da UNIMAR (como os hackers fazem!)
@@ -205,12 +207,12 @@ Engenheiro de Cibersegurança: R$ 10.000+
         [1] João Silva - ADS
         [2] Maria Santos - Ciência da Computação
         [3] Felipe Rodrigues - Cybersegurança
-        [4] Ana Souza - Engenharia de Software
-        [5] Carlos Oliveira - Sistemas de Informação
-        [6] Beatriz Lima - Banco de Dados
+        [4] Ana Souza - Engenharia de computação
+        [5] Carlos Oliveira - cybersegurança
+        [6] Beatriz Lima - Jogos Digitais
         [7] Rafael Gomes - Redes de Computadores
         [8] Luana Fernandes - Segurança da Informação
-        [9] Pedro Costa - DevOps
+        [9] Pedro Costa - Ciência da Computação
         [10] Juliana Martins - Inteligência Artificial
         `;
     } else if (cmd === "ping unimar.br") {
