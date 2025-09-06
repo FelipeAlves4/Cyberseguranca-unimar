@@ -174,7 +174,8 @@ Engenheiro de Cibersegurança: R$ 10.000+
     } else if (cmd === "about") {
         return `"\nCibersegurança UNIMAR: Aprenda a defender, investigar e proteger o futuro digital.\n"`;
     } else if (cmd === "apply") {
-        return `\n🚀 Inscreva-se agora no curso de Cibersegurança da UNIMAR e comece sua jornada!\n`;
+        const link = "https://www.unimar.br/vestibular";
+        return `\n🚀 Inscreva-se agora no curso de Cibersegurança da UNIMAR e comece sua jornada!\n ${link}`;
     } else if (cmd === "clear") {
         output.innerHTML = "";
         hideAscii();
